@@ -1,0 +1,80 @@
+.skills {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__category {
+    @include glass-card;
+    padding: 35px;
+    transition: transform $transition-medium;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+
+    i {
+      font-size: 2rem;
+      color: $accent-primary;
+    }
+
+    h3 {
+      font-size: 1.3rem;
+      color: $text-primary;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba($bg-primary, 0.5);
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all $transition-medium;
+
+  &:hover {
+    border-color: $accent-primary;
+    background: rgba($accent-primary, 0.05);
+
+    i {
+      color: $accent-primary;
+      transform: scale(1.1);
+    }
+  }
+
+  i {
+    font-size: 1.3rem;
+    color: $text-secondary;
+    transition: all $transition-medium;
+    width: 25px;
+    text-align: center;
+  }
+
+  span {
+    font-size: 0.9rem;
+    color: $text-secondary;
+  }
+}

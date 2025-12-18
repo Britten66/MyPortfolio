@@ -1,0 +1,154 @@
+.experience {
+  &__timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 2px;
+      background: linear-gradient(
+        to bottom,
+        $accent-primary,
+        $accent-secondary
+      );
+
+      @media (max-width: $mobile) {
+        left: 15px;
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding-left: 60px;
+    padding-bottom: 50px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+
+    @media (max-width: $mobile) {
+      padding-left: 50px;
+    }
+  }
+
+  &__marker {
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: $bg-primary;
+    border: 2px solid $accent-primary;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $accent-primary;
+    font-size: 1rem;
+    z-index: 1;
+
+    @media (max-width: $mobile) {
+      left: -5px;
+      width: 38px;
+      height: 38px;
+    }
+  }
+
+  &__content {
+    @include glass-card;
+    padding: 30px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 15px;
+      width: 20px;
+      height: 20px;
+      background: $bg-card;
+      border-left: 1px solid $border-color;
+      border-bottom: 1px solid $border-color;
+      transform: rotate(45deg);
+    }
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+
+    h3 {
+      font-size: 1.3rem;
+      color: $text-primary;
+    }
+  }
+
+  &__period {
+    background: rgba($accent-primary, 0.2);
+    color: $accent-primary;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  &__company {
+    color: $text-secondary;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+
+    i {
+      color: $accent-secondary;
+    }
+  }
+
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: $text-muted;
+    font-size: 0.9rem;
+
+    &::before {
+      content: '•';
+      margin: 0 8px;
+    }
+  }
+
+  &__description {
+    list-style: none;
+
+    li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 10px;
+      color: $text-secondary;
+      line-height: 1.6;
+
+      &::before {
+        content: '▹';
+        position: absolute;
+        left: 0;
+        color: $accent-primary;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

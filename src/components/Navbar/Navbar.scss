@@ -1,0 +1,126 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all $transition-medium;
+
+  &.scrolled {
+    @include glass;
+    padding: 15px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  &__container {
+    max-width: $container-width;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: $text-primary;
+    font-family: $font-mono;
+
+    .logo-bracket {
+      color: $accent-primary;
+    }
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+
+    a {
+      color: $text-secondary;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: color $transition-fast;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $accent-gradient;
+        transition: width $transition-medium;
+      }
+
+      &:hover {
+        color: $text-primary;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+
+    @media (max-width: $tablet) {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: $bg-secondary;
+      transition: right $transition-medium;
+      gap: 30px;
+
+      &.active {
+        right: 0;
+      }
+
+      a {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 5px;
+
+    span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: $text-primary;
+      transition: all $transition-medium;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(6px, 6px);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(6px, -6px);
+      }
+    }
+
+    @media (max-width: $tablet) {
+      display: flex;
+    }
+  }
+}
