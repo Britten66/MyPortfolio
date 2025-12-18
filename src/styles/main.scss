@@ -1,0 +1,140 @@
+@import './variables';
+@import './animations';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  background-color: $bg-primary;
+  color: $text-primary;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+      radial-gradient(ellipse at 20% 20%, rgba(108, 99, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(0, 217, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+  }
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: $section-padding;
+  position: relative;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 60px;
+  text-align: center;
+  position: relative;
+
+  span {
+    background: $accent-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background: $accent-gradient;
+    border-radius: 2px;
+  }
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all $transition-medium;
+  border: none;
+
+  &-primary {
+    background: $accent-gradient;
+    color: $text-primary;
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.4);
+    }
+  }
+
+  &-outline {
+    background: transparent;
+    color: $text-primary;
+    border: 2px solid $accent-primary;
+
+    &:hover {
+      background: $accent-primary;
+      transform: translateY(-3px);
+    }
+  }
+}
+
+.footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid $border-color;
+  color: $text-secondary;
+  font-size: 0.9rem;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-secondary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $accent-primary;
+  border-radius: 4px;
+}
+
+// Selection
+::selection {
+  background: $accent-primary;
+  color: $text-primary;
+}

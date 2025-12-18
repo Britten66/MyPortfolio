@@ -1,0 +1,159 @@
+.contact {
+  background: $bg-secondary;
+
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+
+    @media (max-width: $tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__info {
+    h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: $text-primary;
+    }
+
+    p {
+      color: $text-secondary;
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+  }
+
+  &__details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 40px;
+  }
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    &-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 12px;
+      background: rgba($accent-primary, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+
+      i {
+        font-size: 1.3rem;
+        color: $accent-primary;
+      }
+    }
+
+    &-text {
+      .label {
+        display: block;
+        font-size: 0.85rem;
+        color: $text-muted;
+        margin-bottom: 3px;
+      }
+
+      a,
+      span {
+        color: $text-primary;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color $transition-fast;
+      }
+
+      a:hover {
+        color: $accent-primary;
+      }
+    }
+  }
+
+  &__socials {
+    display: flex;
+    gap: 15px;
+
+    a {
+      width: 45px;
+      height: 45px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba($bg-primary, 0.5);
+      color: $text-secondary;
+      font-size: 1.2rem;
+      transition: all $transition-medium;
+      border: 1px solid $border-color;
+
+      &:hover {
+        background: $accent-primary;
+        color: $text-primary;
+        border-color: $accent-primary;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  &__form {
+    @include glass-card;
+    padding: 40px;
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+
+      @media (max-width: $mobile) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+
+      label {
+        display: block;
+        margin-bottom: 10px;
+        color: $text-secondary;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 15px 20px;
+        background: rgba($bg-primary, 0.5);
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        color: $text-primary;
+        font-size: 1rem;
+        font-family: inherit;
+        transition: all $transition-medium;
+        resize: none;
+
+        &::placeholder {
+          color: $text-muted;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $accent-primary;
+          box-shadow: 0 0 0 3px rgba($accent-primary, 0.1);
+        }
+      }
+    }
+
+    .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
