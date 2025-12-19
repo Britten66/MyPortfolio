@@ -37,7 +37,7 @@ const Experience = () => {
       ],
     },
     {
-      title: "SDET (Automation Engineer)",
+      title: "SDET (Automation Tester)",
       company: "Per Fleet",
       location: "Canada",
       period: "2020 - 2022",

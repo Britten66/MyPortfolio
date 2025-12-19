@@ -1,6 +1,38 @@
+import { useEffect } from 'react'
 import './Hero.scss'
 
 const Hero = () => {
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const bubbles = document.querySelectorAll('.hero__floating-stat--1, .hero__floating-stat--2, .hero__floating-stat--3')
+
+      bubbles.forEach((bubble) => {
+        const rect = bubble.getBoundingClientRect()
+        const bubbleCenterX = rect.left + rect.width / 2
+        const bubbleCenterY = rect.top + rect.height / 2
+
+        const deltaX = e.clientX - bubbleCenterX
+        const deltaY = e.clientY - bubbleCenterY
+        const distance = Math.sqrt(deltaX * deltaX + deltaY * deltaY)
+
+        const maxDistance = 150
+
+        if (distance < maxDistance) {
+          const force = (maxDistance - distance) / maxDistance
+          const moveX = -deltaX * force * 0.3
+          const moveY = -deltaY * force * 0.3
+
+          bubble.style.transform = `translate(${moveX}px, ${moveY}px)`
+        } else {
+          bubble.style.transform = 'translate(0, 0)'
+        }
+      })
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    return () => document.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   return (
     <section id="home" className="hero">
       <div className="hero__container">
@@ -28,14 +60,6 @@ const Hero = () => {
             <a href="#contact" className="btn btn-outline">
               <i className="fas fa-envelope"></i>
               Contact Me
-            </a>
-          </div>
-          <div className="hero__socials animate-fadeInUp delay-5">
-            <a href="https://github.com/Britten66" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <i className="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/christopher-britten/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <i className="fab fa-linkedin-in"></i>
             </a>
           </div>
         </div>
@@ -71,15 +95,27 @@ const Hero = () => {
               </div>
             </a>
 
-            <div className="hero__floating-stat hero__floating-stat--3">
+            <a href="#contact" className="hero__floating-stat hero__floating-stat--3">
               <div className="stat-icon">
-                <i className="fas fa-users"></i>
+                <i className="fas fa-envelope"></i>
               </div>
               <div className="stat-content">
-                <span className="stat-value">100%</span>
-                <span className="stat-label">Satisfied Clients</span>
+                <span className="stat-value">Let's</span>
+                <span className="stat-label">Connect</span>
               </div>
-            </div>
+            </a>
+
+            <a href="https://github.com/Britten66" target="_blank" rel="noopener noreferrer" className="hero__floating-stat hero__floating-stat--4" aria-label="GitHub">
+              <div className="stat-icon">
+                <i className="fab fa-github"></i>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/christopher-britten/" target="_blank" rel="noopener noreferrer" className="hero__floating-stat hero__floating-stat--5" aria-label="LinkedIn">
+              <div className="stat-icon">
+                <i className="fab fa-linkedin-in"></i>
+              </div>
+            </a>
           </div>
         </div>
       </div>
