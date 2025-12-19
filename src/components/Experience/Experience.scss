@@ -77,6 +77,10 @@
       border-bottom: 1px solid $border-color;
       transform: rotate(45deg);
     }
+
+    @media (max-width: $mobile) {
+      padding: 20px;
+    }
   }
 
   &__header {
@@ -90,6 +94,10 @@
     h3 {
       font-size: 1.3rem;
       color: $text-primary;
+
+      @media (max-width: $mobile) {
+        font-size: 1.15rem;
+      }
     }
   }
 

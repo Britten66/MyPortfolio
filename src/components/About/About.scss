@@ -104,6 +104,10 @@
     padding: 20px 10px;
     @include glass-card;
 
+    @media (max-width: $mobile) {
+      padding: 16px 8px;
+    }
+
     &-number {
       display: block;
       font-size: 2rem;
@@ -112,6 +116,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+
+      @media (max-width: $mobile) {
+        font-size: 1.6rem;
+      }
     }
 
     &-label {
@@ -119,6 +127,10 @@
       font-size: 0.85rem;
       color: $text-secondary;
       margin-top: 5px;
+
+      @media (max-width: $mobile) {
+        font-size: 0.75rem;
+      }
     }
   }
 
