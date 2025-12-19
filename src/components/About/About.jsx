@@ -20,7 +20,7 @@ const About = () => {
             <div className="about__image-wrapper">
               <div className="about__image-placeholder">
                 <img
-                  src="/assets/images/coffee-img.png"
+                  src="/assets/images/coffee-img.jpg"
                   alt="Coffee"
                   className="about__profile-image"
                 />
@@ -31,7 +31,7 @@ const About = () => {
           <div className="about__text">
             <h3>A passionate full stack developer based in Nova Scotia</h3>
             <p>
-           with a specialized background in the tech industry. I leverage my dual skillset of testing and development to build digital products that look exceptional and perform effectivly. Passionate about user centric development and delivering cohesive end to end experiences.
+           with a specialized background in the tech industry. I leverage my dual skillset of testing and development to build digital products that look exceptional and perform effectively. Passionate about user-centric development and delivering cohesive end-to-end experiences.
             </p>
             <p>
               When I'm not coding, you can find me exploring new technologies,
@@ -48,7 +48,7 @@ const About = () => {
               ))}
             </div>
 
-            <a href="/resume.pdf" className="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <a href="/assets/docs/resume.pdf" className="btn btn-primary" download="Christopher_Britten_Resume.pdf">
               <i className="fas fa-download"></i>
               Download CV
             </a>

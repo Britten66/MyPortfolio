@@ -17,44 +17,40 @@
 }
 
 .project-card {
-  perspective: 1000px;
-  height: 350px;
+  @include glass-card;
+  cursor: pointer;
+  transition: all $transition-medium;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 
-  &__inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    cursor: pointer;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba($accent-primary, 0.2);
+
+    .project-card__details {
+      max-height: 300px;
+      opacity: 1;
+      padding: 20px 30px 30px;
+    }
+
+    .project-card__image {
+      background: rgba($accent-primary, 0.2);
+    }
   }
 
-  &:hover &__inner {
-    transform: rotateY(180deg);
-  }
-
-  &__front,
-  &__back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    @include glass-card;
-    padding: 30px;
+  &__content {
     display: flex;
     flex-direction: column;
+    flex: 1;
   }
 
-  &__front {
-    align-items: center;
-    justify-content: center;
+  &__header {
+    padding: 30px;
     text-align: center;
-  }
-
-  &__back {
-    transform: rotateY(180deg);
-    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__image {
@@ -66,6 +62,7 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    transition: all $transition-medium;
 
     i {
       font-size: 2.5rem;
@@ -77,13 +74,6 @@
     font-size: 1.3rem;
     color: $text-primary;
     margin-bottom: 15px;
-  }
-
-  &__description {
-    color: $text-secondary;
-    font-size: 0.95rem;
-    line-height: 1.7;
-    margin-bottom: 20px;
   }
 
   &__tags {
@@ -102,10 +92,26 @@
     font-weight: 500;
   }
 
+  &__details {
+    max-height: 0;
+    opacity: 0;
+    padding: 0 30px;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__description {
+    color: $text-secondary;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
   &__links {
     display: flex;
     gap: 15px;
-    margin-top: auto;
 
     a {
       flex: 1;
@@ -122,7 +128,7 @@
 
       &:first-child {
         background: $accent-gradient;
-        color: $text-primary;
+        color: black;
 
         &:hover {
           transform: translateY(-2px);
@@ -138,6 +144,71 @@
           border-color: $accent-primary;
           color: $text-primary;
         }
+      }
+    }
+  }
+
+  &__metrics {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 16px 20px;
+    margin-top: auto;
+    background: rgba(15, 15, 15, 0.4);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 12px;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 12px;
+      padding: 16px;
+    }
+
+    .metric {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+
+      @media (max-width: $mobile) {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      i {
+        font-size: 1.1rem;
+        color: $accent-primary;
+        flex-shrink: 0;
+        width: 20px;
+        text-align: center;
+      }
+
+      &-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+      }
+
+      &-label {
+        font-size: 0.65rem;
+        color: $text-muted;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 500;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      &-value {
+        font-size: 0.8rem;
+        color: $text-primary;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
   }

@@ -31,14 +31,11 @@ const Hero = () => {
             </a>
           </div>
           <div className="hero__socials animate-fadeInUp delay-5">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <a href="https://github.com/Britten66" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
               <i className="fab fa-github"></i>
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/christopher-britten/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <i className="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-              <i className="fab fa-twitter"></i>
             </a>
           </div>
         </div>
@@ -46,7 +43,7 @@ const Hero = () => {
           <div className="hero__image-wrapper">
             <div className="hero__image-placeholder">
               <img
-                src="/assets/images/imageofme.png"
+                src="/assets/images/imageofme.jpg"
                 alt="Christopher Britten"
                 className="hero__profile-image"
               />
@@ -54,33 +51,33 @@ const Hero = () => {
             <div className="hero__decoration hero__decoration--1"></div>
             <div className="hero__decoration hero__decoration--2"></div>
 
-            <div className="hero__floating-stat hero__floating-stat--1">
+            <a href="#experience" className="hero__floating-stat hero__floating-stat--1">
               <div className="stat-icon">
                 <i className="fas fa-briefcase"></i>
               </div>
               <div className="stat-content">
-                <span className="stat-value">+2 Years</span>
+                <span className="stat-value">+3 Years</span>
                 <span className="stat-label">Experience</span>
               </div>
-            </div>
+            </a>
 
-            <div className="hero__floating-stat hero__floating-stat--2">
-              <div className="stat-icon">
-                <i className="fas fa-chart-line"></i>
-              </div>
-              <div className="stat-content">
-                <span className="stat-value">+40%</span>
-                <span className="stat-label">Efficiency</span>
-              </div>
-            </div>
-
-            <div className="hero__floating-stat hero__floating-stat--3">
+            <a href="#projects" className="hero__floating-stat hero__floating-stat--2">
               <div className="stat-icon">
                 <i className="fas fa-code"></i>
               </div>
               <div className="stat-content">
                 <span className="stat-value">50+</span>
                 <span className="stat-label">Projects</span>
+              </div>
+            </a>
+
+            <div className="hero__floating-stat hero__floating-stat--3">
+              <div className="stat-icon">
+                <i className="fas fa-users"></i>
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">100%</span>
+                <span className="stat-label">Satisfied Clients</span>
               </div>
             </div>
           </div>

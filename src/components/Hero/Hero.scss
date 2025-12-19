@@ -239,6 +239,8 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(16px);
     animation: floatStat 4s ease-in-out infinite;
+    text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-5px) scale(1.05);

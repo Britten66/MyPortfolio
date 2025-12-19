@@ -15,7 +15,7 @@ const Experience = () => {
       ],
     },
     {
-      title: "Full Stack Web Developer (Contract)",
+      title: "Web Developer (Contract)",
       company: "FireQ Emergency Management Software",
       location: "Nova Scotia",
       period: "2025 - Present",

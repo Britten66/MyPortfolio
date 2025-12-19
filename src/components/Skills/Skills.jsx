@@ -1,53 +1,75 @@
+import { useEffect, useRef } from 'react'
 import './Skills.scss'
 
 const Skills = () => {
+  const categoriesRef = useRef([])
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    categoriesRef.current.forEach((category) => {
+      if (category) observer.observe(category)
+    })
+
+    return () => observer.disconnect()
+  }, [])
+
   const skillCategories = [
     {
-      title: 'Frontend',
-      icon: 'fas fa-laptop-code',
+      title: 'Programming Languages',
+      icon: 'fas fa-code',
       skills: [
-        { name: 'React', icon: 'fab fa-react' },
-        { name: 'Vue.js', icon: 'fab fa-vuejs' },
-        { name: 'JavaScript', icon: 'fab fa-js-square' },
-        { name: 'TypeScript', icon: 'fas fa-code' },
-        { name: 'HTML5', icon: 'fab fa-html5' },
-        { name: 'CSS3/SCSS', icon: 'fab fa-css3-alt' },
+        { name: 'Java', icon: 'fab fa-java', learning: false },
+        { name: 'Python', icon: 'fab fa-python', learning: false },
+        { name: 'JavaScript', icon: 'fab fa-js', learning: false },
+        { name: 'TypeScript', icon: 'fab fa-js-square', learning: true },
+        { name: 'Bash', icon: 'fas fa-terminal', learning: false },
+        { name: 'SQL', icon: 'fas fa-database', learning: false },
       ],
     },
     {
-      title: 'Backend',
-      icon: 'fas fa-server',
-      skills: [
-        { name: 'Node.js', icon: 'fab fa-node-js' },
-        { name: 'Python', icon: 'fab fa-python' },
-        { name: 'Java', icon: 'fab fa-java' },
-        { name: 'Express', icon: 'fas fa-cube' },
-        { name: 'PostgreSQL', icon: 'fas fa-database' },
-        { name: 'MongoDB', icon: 'fas fa-leaf' },
-      ],
-    },
-    {
-      title: 'Testing & QA',
+      title: 'Testing & Automation',
       icon: 'fas fa-vial',
       skills: [
-        { name: 'Selenium', icon: 'fas fa-robot' },
-        { name: 'Jest', icon: 'fas fa-check-circle' },
-        { name: 'JUnit', icon: 'fas fa-flask' },
-        { name: 'Cypress', icon: 'fas fa-bug' },
-        { name: 'API Testing', icon: 'fas fa-plug' },
-        { name: 'Test Automation', icon: 'fas fa-cogs' },
+        { name: 'Selenium WebDriver', icon: 'fas fa-robot', learning: false },
+        { name: 'Cucumber', icon: 'fas fa-check-circle', learning: false },
+        { name: 'REST Assured', icon: 'fas fa-plug', learning: false },
+        { name: 'TestNG', icon: 'fas fa-flask', learning: false },
+        { name: 'JUnit', icon: 'fas fa-bug', learning: false },
+        { name: 'Postman', icon: 'fas fa-paper-plane', learning: false },
       ],
     },
     {
-      title: 'Tools & DevOps',
-      icon: 'fas fa-tools',
+      title: 'Full Stack Development',
+      icon: 'fas fa-laptop-code',
       skills: [
-        { name: 'Git', icon: 'fab fa-git-alt' },
-        { name: 'Docker', icon: 'fab fa-docker' },
-        { name: 'AWS', icon: 'fab fa-aws' },
-        { name: 'Linux', icon: 'fab fa-linux' },
-        { name: 'Jenkins', icon: 'fas fa-project-diagram' },
-        { name: 'CI/CD', icon: 'fas fa-sync-alt' },
+        { name: 'React', icon: 'fab fa-react', learning: false },
+        { name: 'Node.js', icon: 'fab fa-node-js', learning: false },
+        { name: 'REST APIs', icon: 'fas fa-plug', learning: false },
+        { name: 'CSS', icon: 'fab fa-css3-alt', learning: false },
+        { name: 'PostgreSQL', icon: 'fas fa-database', learning: false },
+        { name: 'Bootstrap', icon: 'fab fa-bootstrap', learning: false },
+      ],
+    },
+    {
+      title: 'DevOps & CI/CD',
+      icon: 'fas fa-cogs',
+      skills: [
+        { name: 'Git / GitHub', icon: 'fab fa-git-alt', learning: false },
+        { name: 'Jenkins', icon: 'fas fa-server', learning: false },
+        { name: 'Maven', icon: 'fas fa-cube', learning: false },
+        { name: 'Jira', icon: 'fab fa-jira', learning: false },
+        { name: 'IntelliJ IDEA', icon: 'fas fa-brain', learning: false },
+        { name: 'VS Code', icon: 'fas fa-file-code', learning: false },
       ],
     },
   ]
@@ -61,7 +83,11 @@ const Skills = () => {
 
         <div className="skills__grid">
           {skillCategories.map((category, index) => (
-            <div key={index} className="skills__category">
+            <div
+              key={index}
+              className="skills__category"
+              ref={(el) => (categoriesRef.current[index] = el)}
+            >
               <div className="skills__category-header">
                 <i className={category.icon}></i>
                 <h3>{category.title}</h3>
@@ -71,6 +97,7 @@ const Skills = () => {
                   <div key={i} className="skill-item">
                     <i className={skill.icon}></i>
                     <span>{skill.name}</span>
+                    {skill.learning && <span className="learning-badge">Learning</span>}
                   </div>
                 ))}
               </div>

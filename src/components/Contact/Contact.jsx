@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import './Contact.scss'
 
 const Contact = () => {
@@ -8,6 +9,7 @@ const Contact = () => {
     subject: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -16,32 +18,53 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Add your form submission logic here
-    console.log('Form submitted:', formData)
-    alert('Thank you for your message! I will get back to you soon.')
-    setFormData({ name: '', email: '', subject: '', message: '' })
+    setIsSubmitting(true)
+
+    try {
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+      const templateParams = {
+        to_name: 'Christopher',
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      }
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+
+      alert('Thank you for your message! I will get back to you soon.')
+      setFormData({ name: '', email: '', subject: '', message: '' })
+    } catch (error) {
+      console.error('EmailJS Error:', error)
+      alert('Oops! Something went wrong. Please try again or email me directly at britten63@hotmail.com')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const contactInfo = [
     {
       icon: 'fas fa-envelope',
       label: 'Email',
-      value: 'hello@example.com',
-      href: 'mailto:hello@example.com',
+      value: 'britten63@hotmail.com',
+      href: 'mailto:britten63@hotmail.com',
     },
     {
       icon: 'fas fa-map-marker-alt',
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Cape Breton, Nova Scotia',
       href: null,
     },
     {
       icon: 'fab fa-linkedin-in',
       label: 'LinkedIn',
-      value: 'linkedin.com/in/yourname',
-      href: 'https://linkedin.com',
+      value: 'linkedin.com/in/christopher-britten',
+      href: 'https://www.linkedin.com/in/christopher-britten/',
     },
   ]
 
@@ -54,11 +77,12 @@ const Contact = () => {
 
         <div className="contact__content">
           <div className="contact__info">
-            <h3>Let's talk about everything!</h3>
+            <h3>Let's Connect</h3>
             <p>
-              Have a project in mind or just want to say hello? Feel free to
-              reach out. I'm always open to discussing new projects, creative
-              ideas, or opportunities to be part of your vision.
+              I'm always interested in hearing about new opportunities,
+              collaborations, or just having a conversation about technology
+              and innovation. Whether you have a project in mind or want to
+              connect, feel free to reach out.
             </p>
 
             <div className="contact__details">
@@ -82,17 +106,11 @@ const Contact = () => {
             </div>
 
             <div className="contact__socials">
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <a href="https://github.com/Britten66" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <i className="fab fa-github"></i>
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/in/christopher-britten/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble">
-                <i className="fab fa-dribbble"></i>
               </a>
             </div>
           </div>
@@ -105,9 +123,9 @@ const Contact = () => {
                   type="text"
                   id="name"
                   name="name"
+                  placeholder="Name"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="John Doe"
                   required
                 />
               </div>
@@ -117,9 +135,10 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
+                  placeholder="Email"
+
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="john@example.com"
                   required
                 />
               </div>
@@ -148,9 +167,9 @@ const Contact = () => {
                 required
               ></textarea>
             </div>
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
               <i className="fas fa-paper-plane"></i>
-              Send Message
+              {isSubmitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
