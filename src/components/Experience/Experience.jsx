@@ -1,45 +1,53 @@
-import './Experience.scss'
+import "./Experience.scss";
 
 const Experience = () => {
   const experiences = [
     {
-      title: 'SDET (Software Development Engineer in Test)',
-      company: 'QA & Automation Team',
-      location: 'Canada',
-      period: '2020 - 2022',
+      title: "Diploma in Full Stack Software Development",
+      company: "Keyin College",
+      location: "Nova Scotia",
+      period: "Graduating 2025",
+      type: "education",
       description: [
-        'Built and executed automated test scenarios using Cucumber and Gherkin syntax',
-        'Validated backend data integrity through complex SQL queries',
-        'Collaborated with development teams to identify, reproduce, and resolve defects',
-        'Applied BDD practices ensuring requirements aligned with business behavior',
-        'Strengthened release quality through comprehensive regression and integration testing',
+        "Specializing in Modern Web Stack (React, Node.js)",
+        "Core Technical Focus: JavaScript, Java, SQL, REST APIs",
+        "Applied Learning: Test-Driven Development, Agile, Git Version Control",
       ],
     },
     {
-      title: 'Full Stack Software Developer',
-      company: 'Freelance / Contract',
-      location: 'Remote, Canada',
-      period: '2022 - 2024',
+      title: "Full Stack Web Developer (Contract)",
+      company: "FireQ Emergency Management Software",
+      location: "Nova Scotia",
+      period: "2025 - Present",
       description: [
-        'Developed backend logic and data-driven features using Java and SQL',
-        'Built and integrated RESTful APIs with structured data flows',
-        'Implemented clean, maintainable code following industry best practices',
-        'Debugged and resolved issues across full application stack (frontend, backend, database)',
+        "Architecting production UI components for mission critical emergency software using React and WordPress",
+        "Delivering responsive, cross browser solutions while completing advanced Full Stack certification",
+        "Tech Stack: React, JavaScript, Elementor, CSS3",
       ],
     },
     {
-      title: 'Full Stack Development Program',
-      company: 'Software Development Institute',
-      location: 'Canada',
-      period: 'April 2025 - Present',
+      title: "Program Support / Data Administrator (Federal Government)",
+      company: "Immigration, Refugees and Citizenship Canada",
+      location: "Canada",
+      period: "2022 - 2024",
       description: [
-        'Advanced Java development (OOP, collections, exception handling)',
-        'Database design and SQL optimization (queries, joins, data validation)',
-        'Test automation frameworks and QA methodologies',
-        'Software architecture, version control with Git, and Agile practices',
+        "Managed case data within GCMS and ensured high-level data integrity for federal compliance systems",
+        "Identified processing errors and collaborated with teams to improve data validation workflows",
+        "Handled sensitive information under strict privacy and security protocols",
       ],
     },
-  ]
+    {
+      title: "SDET (Automation Engineer)",
+      company: "Per Fleet",
+      location: "Canada",
+      period: "2020 - 2022",
+      description: [
+        "Built automated testing frameworks (Selenium/Cucumber) to accelerate software release cycles",
+        "Bridged the gap between QA and Engineering, ensuring code quality before deployment",
+        "Tech Stack: Selenium, Java, SQL, Jira",
+      ],
+    },
+  ];
 
   return (
     <section id="experience" className="experience">
@@ -52,7 +60,13 @@ const Experience = () => {
           {experiences.map((exp, index) => (
             <div key={index} className="experience__item">
               <div className="experience__marker">
-                <i className="fas fa-briefcase"></i>
+                <i
+                  className={
+                    exp.type === "education"
+                      ? "fas fa-graduation-cap"
+                      : "fas fa-briefcase"
+                  }
+                ></i>
               </div>
               <div className="experience__content">
                 <div className="experience__header">
@@ -78,7 +92,7 @@ const Experience = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Experience
+export default Experience;

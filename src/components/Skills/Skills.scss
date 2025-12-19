@@ -1,7 +1,7 @@
 .skills {
   &__grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
 
     @media (max-width: $tablet) {
@@ -50,24 +50,25 @@
   align-items: center;
   gap: 12px;
   padding: 12px 15px;
-  background: rgba($bg-primary, 0.5);
+  background: rgba(60, 60, 60, 0.418);
   border-radius: 10px;
   border: 1px solid transparent;
   transition: all $transition-medium;
 
   &:hover {
-    border-color: $accent-primary;
-    background: rgba($accent-primary, 0.05);
+    border-color: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.34);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 
     i {
-      color: $accent-primary;
       transform: scale(1.1);
     }
   }
 
   i {
     font-size: 1.3rem;
-    color: $text-secondary;
+    color: #ffefef;
     transition: all $transition-medium;
     width: 25px;
     text-align: center;
@@ -75,6 +76,7 @@
 
   span {
     font-size: 0.9rem;
-    color: $text-secondary;
+    color: #ffffff;
+    transition: all $transition-medium;
   }
 }

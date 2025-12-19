@@ -10,7 +10,10 @@
   &.scrolled {
     @include glass;
     padding: 15px 0;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      0 10px 40px rgba(0, 0, 0, 0.8),
+      0 0 20px rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   &__container {
@@ -75,9 +78,12 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      background: $bg-secondary;
+      background: rgba(0, 0, 0, 0.98);
+      backdrop-filter: blur(20px);
       transition: right $transition-medium;
       gap: 30px;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.8);
 
       &.active {
         right: 0;

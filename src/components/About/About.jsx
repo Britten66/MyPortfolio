@@ -19,22 +19,23 @@ const About = () => {
           <div className="about__image">
             <div className="about__image-wrapper">
               <div className="about__image-placeholder">
-                <i className="fas fa-code"></i>
+                <img
+                  src="/assets/images/coffee-img.png"
+                  alt="Coffee"
+                  className="about__profile-image"
+                />
               </div>
             </div>
           </div>
 
           <div className="about__text">
-            <h3>A passionate developer based in Your City</h3>
+            <h3>A passionate full stack developer based in Nova Scotia</h3>
             <p>
-              I'm a full-stack developer with a passion for creating beautiful,
-              functional, and user-centered digital experiences. With a background
-              in both design and development, I bring a unique perspective to every
-              project I work on.
+           with a specialized background in the tech industry. I leverage my dual skillset of testing and development to build digital products that look exceptional and perform effectivly. Passionate about user centric development and delivering cohesive end to end experiences.
             </p>
             <p>
               When I'm not coding, you can find me exploring new technologies,
-              contributing to open-source projects, or enjoying a good cup of coffee
+              contributing to open source projects, or enjoying a good cup of coffee
               while reading about the latest trends in web development.
             </p>
 

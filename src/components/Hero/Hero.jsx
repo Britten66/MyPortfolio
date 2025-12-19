@@ -7,15 +7,18 @@ const Hero = () => {
         <div className="hero__content">
           <p className="hero__greeting animate-fadeInDown">Hello, I'm</p>
           <h1 className="hero__name animate-fadeInUp delay-1">
-            Your <span>Name</span>
+            Christopher <span>Britten</span>
           </h1>
           <h2 className="hero__title animate-fadeInUp delay-2">
             <span className="typing-text">Full Stack Developer</span>
           </h2>
+          <p className="hero__location animate-fadeInUp delay-2-5">
+            <i className="fas fa-map-marker-alt"></i> Nova Scotia, Canada
+          </p>
           <p className="hero__description animate-fadeInUp delay-3">
-            I build exceptional digital experiences that are fast, accessible,
-            and visually stunning. Passionate about turning complex problems
-            into simple, beautiful solutions.
+            I build scalable products that are fast, accessible,
+            and dynamic. Passionate about turning complex problems
+            into simple, effective solutions.
           </p>
           <div className="hero__buttons animate-fadeInUp delay-4">
             <a href="#projects" className="btn btn-primary">
@@ -42,10 +45,44 @@ const Hero = () => {
         <div className="hero__visual animate-fadeInRight delay-2">
           <div className="hero__image-wrapper">
             <div className="hero__image-placeholder">
-              <i className="fas fa-user"></i>
+              <img
+                src="/assets/images/imageofme.png"
+                alt="Christopher Britten"
+                className="hero__profile-image"
+              />
             </div>
             <div className="hero__decoration hero__decoration--1"></div>
             <div className="hero__decoration hero__decoration--2"></div>
+
+            <div className="hero__floating-stat hero__floating-stat--1">
+              <div className="stat-icon">
+                <i className="fas fa-briefcase"></i>
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">+2 Years</span>
+                <span className="stat-label">Experience</span>
+              </div>
+            </div>
+
+            <div className="hero__floating-stat hero__floating-stat--2">
+              <div className="stat-icon">
+                <i className="fas fa-chart-line"></i>
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">+40%</span>
+                <span className="stat-label">Efficiency</span>
+              </div>
+            </div>
+
+            <div className="hero__floating-stat hero__floating-stat--3">
+              <div className="stat-icon">
+                <i className="fas fa-code"></i>
+              </div>
+              <div className="stat-content">
+                <span className="stat-value">50+</span>
+                <span className="stat-label">Projects</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
