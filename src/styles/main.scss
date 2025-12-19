@@ -72,11 +72,11 @@ section {
   position: relative;
 
   @media (max-width: $tablet) {
-    padding: 80px 0;
+    padding: 60px 0;
   }
 
   @media (max-width: $mobile) {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 }
 
@@ -108,12 +108,12 @@ section {
 
   @media (max-width: $tablet) {
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
   }
 
   @media (max-width: $mobile) {
-    font-size: 1.8rem;
-    margin-bottom: 40px;
+    font-size: 1.6rem;
+    margin-bottom: 30px;
   }
 }
 

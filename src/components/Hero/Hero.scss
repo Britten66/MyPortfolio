@@ -5,6 +5,11 @@
   position: relative;
   padding-top: 80px;
 
+  @media (max-width: $mobile) {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
   &__container {
     max-width: $container-width;
     margin: 0 auto;
@@ -17,6 +22,12 @@
     @media (max-width: $tablet) {
       grid-template-columns: 1fr;
       text-align: center;
+      gap: 40px;
+    }
+
+    @media (max-width: $mobile) {
+      gap: 30px;
+      padding: 0 16px;
     }
   }
 
@@ -32,6 +43,11 @@
     font-weight: 500;
     margin-bottom: 10px;
     font-family: $font-mono;
+
+    @media (max-width: $mobile) {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
   }
 
   &__name {
@@ -52,7 +68,8 @@
     }
 
     @media (max-width: $mobile) {
-      font-size: 2.5rem;
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
   }
 
@@ -69,7 +86,8 @@
     }
 
     @media (max-width: $mobile) {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
     }
   }
 
@@ -89,6 +107,11 @@
     @media (max-width: $tablet) {
       justify-content: center;
     }
+
+    @media (max-width: $mobile) {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
   }
 
   &__description {
@@ -100,6 +123,12 @@
 
     @media (max-width: $tablet) {
       margin: 0 auto 35px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
     }
   }
 
@@ -115,6 +144,8 @@
     @media (max-width: $mobile) {
       flex-direction: column;
       align-items: center;
+      gap: 12px;
+      margin-bottom: 25px;
     }
   }
 
@@ -124,6 +155,10 @@
 
     @media (max-width: $tablet) {
       justify-content: center;
+    }
+
+    @media (max-width: $mobile) {
+      gap: 15px;
     }
 
     a {
@@ -137,6 +172,12 @@
       border: 1px solid $border-color;
       font-size: 1.2rem;
       transition: all $transition-medium;
+
+      @media (max-width: $mobile) {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+      }
 
       &:hover {
         color: $text-primary;
@@ -176,6 +217,12 @@
       width: 280px;
       height: 280px;
     }
+
+    @media (max-width: $mobile) {
+      width: 220px;
+      height: 220px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
   }
 
   &__profile-image {
@@ -204,6 +251,11 @@
         width: 320px;
         height: 320px;
       }
+
+      @media (max-width: $mobile) {
+        width: 250px;
+        height: 250px;
+      }
     }
 
     &--2 {
@@ -222,6 +274,11 @@
       @media (max-width: $tablet) {
         width: 360px;
         height: 360px;
+      }
+
+      @media (max-width: $mobile) {
+        width: 280px;
+        height: 280px;
       }
     }
   }
@@ -297,8 +354,9 @@
       }
 
       @media (max-width: $mobile) {
-        top: 5%;
-        right: 5%;
+        top: 2%;
+        right: -5%;
+        transform: scale(0.85);
       }
     }
 
@@ -315,8 +373,9 @@
       }
 
       @media (max-width: $mobile) {
-        top: 38%;
-        right: 0%;
+        top: 45%;
+        right: -8%;
+        transform: scale(0.85);
       }
     }
 
@@ -333,8 +392,9 @@
       }
 
       @media (max-width: $mobile) {
-        bottom: 8%;
-        right: 0%;
+        bottom: 5%;
+        right: -8%;
+        transform: scale(0.85);
       }
     }
 
@@ -352,8 +412,8 @@
       }
 
       @media (max-width: $mobile) {
-        bottom: -18%;
-        transform: translateX(-50%) scale(0.9);
+        bottom: -15%;
+        transform: translateX(-50%) scale(0.8);
         left: 25%;
       }
 
@@ -368,7 +428,7 @@
           inset 0 0 30px rgba(255, 255, 255, 0.15);
 
         @media (max-width: $mobile) {
-          transform: translateX(-50%) translateY(-5px) scale(0.95);
+          transform: translateX(-50%) translateY(-5px) scale(0.85);
         }
       }
 
@@ -401,8 +461,8 @@
       }
 
       @media (max-width: $mobile) {
-        bottom: -18%;
-        transform: translateX(-50%) scale(0.9);
+        bottom: -15%;
+        transform: translateX(-50%) scale(0.8);
         left: 75%;
       }
 
@@ -417,7 +477,7 @@
           inset 0 0 30px rgba(255, 255, 255, 0.15);
 
         @media (max-width: $mobile) {
-          transform: translateX(-50%) translateY(-5px) scale(0.95);
+          transform: translateX(-50%) translateY(-5px) scale(0.85);
         }
       }
 
@@ -492,10 +552,10 @@
 
   @media (max-width: $mobile) {
     0%, 100% {
-      transform: translateX(-50%) translateY(0px) scale(0.9);
+      transform: translateX(-50%) translateY(0px) scale(0.8);
     }
     50% {
-      transform: translateX(-50%) translateY(-8px) scale(0.9);
+      transform: translateX(-50%) translateY(-6px) scale(0.8);
     }
   }
 }
@@ -510,10 +570,10 @@
 
   @media (max-width: $mobile) {
     0%, 100% {
-      transform: translateX(-50%) translateY(0px) scale(0.9);
+      transform: translateX(-50%) translateY(0px) scale(0.8);
     }
     50% {
-      transform: translateX(-50%) translateY(-8px) scale(0.9);
+      transform: translateX(-50%) translateY(-6px) scale(0.8);
     }
   }
 }
