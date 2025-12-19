@@ -5,7 +5,7 @@ const Experience = () => {
     {
       title: "Diploma in Full Stack Software Development",
       company: "Keyin College",
-      location: "Nova Scotia",
+      location: "Newfoundland (Remote)",
       period: "Graduating 2025",
       type: "education",
       description: [

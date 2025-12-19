@@ -94,7 +94,11 @@ const Contact = () => {
                   <div className="contact__detail-text">
                     <span className="label">{info.label}</span>
                     {info.href ? (
-                      <a href={info.href} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={info.href}
+                        target={info.href.startsWith('mailto:') ? '_self' : '_blank'}
+                        rel={info.href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                      >
                         {info.value}
                       </a>
                     ) : (
