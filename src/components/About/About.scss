@@ -33,6 +33,10 @@
     position: relative;
     overflow: hidden;
 
+    @media (max-width: $mobile) {
+      max-width: 280px;
+    }
+
     &::before {
       content: '';
       position: absolute;

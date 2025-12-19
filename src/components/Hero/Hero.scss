@@ -14,6 +14,7 @@
     max-width: $container-width;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 60px;
@@ -27,13 +28,20 @@
 
     @media (max-width: $mobile) {
       gap: 30px;
-      padding: 0 16px;
+      padding: 0 20px;
     }
   }
 
   &__content {
     @media (max-width: $tablet) {
       order: 2;
+    }
+
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
   }
 
@@ -129,6 +137,8 @@
       font-size: 0.95rem;
       line-height: 1.6;
       margin-bottom: 20px;
+      width: 100%;
+      text-align: center;
     }
   }
 
@@ -192,12 +202,23 @@
     @media (max-width: $tablet) {
       order: 1;
     }
+
+    @media (max-width: $mobile) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__image-wrapper {
     position: relative;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 450px;
+
+    @media (max-width: $mobile) {
+      max-width: 280px;
+    }
   }
 
   &__image-placeholder {
@@ -298,6 +319,10 @@
     animation: floatStat 4s ease-in-out infinite;
     text-decoration: none;
     cursor: pointer;
+
+    @media (max-width: 400px) {
+      display: none;
+    }
 
     &:hover {
       transform: translateY(-5px) scale(1.05);

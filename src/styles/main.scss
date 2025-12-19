@@ -61,9 +61,10 @@ body {
   max-width: $container-width;
   margin: 0 auto;
   padding: 0 20px;
+  width: 100%;
 
   @media (max-width: $mobile) {
-    padding: 0 16px;
+    padding: 0 20px;
   }
 }
 
