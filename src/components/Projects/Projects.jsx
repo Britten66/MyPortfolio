@@ -53,19 +53,20 @@ const Projects = () => {
         { icon: 'fas fa-file-code', label: 'Storage', value: 'File-based' },
         { icon: 'fas fa-cube', label: 'Paradigm', value: 'OOP' },
       ],
-    },
-    {
-      title: '100 Days of Code',
-      description: '100 days of coding every day for at least 1 hour, focusing on frontend development with real-world projects.',
-      image: null,
-      tags: ['JavaScript', 'HTML', 'CSS'],
-      liveUrl: 'https://britten66.github.io/100-Days-Coding/',
-      githubUrl: 'https://github.com/Britten66/100-Days-Coding',
-      metrics: [
-        { icon: 'fas fa-calendar-check', label: 'Duration', value: '100 Days' },
-        { icon: 'fas fa-folder-open', label: 'Output', value: '100+ Projects' },
-        { icon: 'fas fa-palette', label: 'Focus', value: 'Frontend' },
-      ],
+    // },
+    // {
+    //   title: '100 Days of Code',
+    //   description: '100 days of coding every day for at least 1 hour, focusing on frontend development with real-world projects.',
+    //   image: null,
+    //   tags: ['JavaScript', 'HTML', 'CSS'],
+    //   liveUrl: 'https://britten66.github.io/100-Days-Coding/',
+    //   githubUrl: 'https://github.com/Britten66/100-Days-Coding',
+    //   metrics: [
+    //     { icon: 'fas fa-calendar-check', label: 'Duration', value: '100 Days' },
+    //     { icon: 'fas fa-folder-open', label: 'Output', value: '100+ Projects' },
+    //     { icon: 'fas fa-palette', label: 'Focus', value: 'Frontend' },
+    //   ],
+    // },
     },
   ]
 
