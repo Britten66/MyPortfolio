@@ -90,7 +90,7 @@ const Hero = () => {
                 <i className="fas fa-code"></i>
               </div>
               <div className="stat-content">
-                <span className="stat-value">50+</span>
+                <span className="stat-value">25+</span>
                 <span className="stat-label">Projects</span>
               </div>
             </a>
