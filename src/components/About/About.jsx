@@ -46,7 +46,7 @@ const About = () => {
               together.
             </p>
             <p>
-              I've worked across 50+ projects through academic programs, client
+              I've worked across projects through academic programs, client
               work, and personal development ranging from quick prototypes to
               fully deployed applications.
             </p>
