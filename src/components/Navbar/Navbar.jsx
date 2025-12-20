@@ -31,7 +31,7 @@ const Navbar = () => {
       <div className="navbar__container">
         <a href="#home" className="navbar__logo">
           <span className="logo-bracket">&lt;</span>
-          Portfolio
+          CB
           <span className="logo-bracket">/&gt;</span>
         </a>
 

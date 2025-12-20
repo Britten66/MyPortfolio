@@ -320,7 +320,7 @@
     text-decoration: none;
     cursor: pointer;
 
-    @media (max-width: 400px) {
+    @media (max-width: $mobile) {
       display: none;
     }
 
@@ -377,12 +377,6 @@
         top: 5%;
         right: -12%;
       }
-
-      @media (max-width: $mobile) {
-        top: 2%;
-        right: -5%;
-        transform: scale(0.85);
-      }
     }
 
     &--2 {
@@ -396,12 +390,6 @@
         top: 40%;
         right: -12%;
       }
-
-      @media (max-width: $mobile) {
-        top: 45%;
-        right: -8%;
-        transform: scale(0.85);
-      }
     }
 
     &--3 {
@@ -414,12 +402,6 @@
       @media (max-width: $tablet) {
         bottom: 8%;
         right: -12%;
-      }
-
-      @media (max-width: $mobile) {
-        bottom: 5%;
-        right: -8%;
-        transform: scale(0.85);
       }
     }
 
@@ -436,12 +418,6 @@
         bottom: -25%;
       }
 
-      @media (max-width: $mobile) {
-        bottom: -15%;
-        transform: translateX(-50%) scale(0.8);
-        left: 25%;
-      }
-
       &:hover {
         animation-play-state: paused;
         transform: translateX(-130px) translateY(-5px) scale(1.05);
@@ -451,10 +427,6 @@
           0 12px 48px rgba(255, 255, 255, 0.25),
           0 0 40px rgba(255, 255, 255, 0.2),
           inset 0 0 30px rgba(255, 255, 255, 0.15);
-
-        @media (max-width: $mobile) {
-          transform: translateX(-50%) translateY(-5px) scale(0.85);
-        }
       }
 
       .stat-icon {
@@ -485,12 +457,6 @@
         bottom: -25%;
       }
 
-      @media (max-width: $mobile) {
-        bottom: -15%;
-        transform: translateX(-50%) scale(0.8);
-        left: 75%;
-      }
-
       &:hover {
         animation-play-state: paused;
         transform: translateX(50px) translateY(-5px) scale(1.05);
@@ -500,10 +466,6 @@
           0 12px 48px rgba(255, 255, 255, 0.25),
           0 0 40px rgba(255, 255, 255, 0.2),
           inset 0 0 30px rgba(255, 255, 255, 0.15);
-
-        @media (max-width: $mobile) {
-          transform: translateX(-50%) translateY(-5px) scale(0.85);
-        }
       }
 
       .stat-icon {
@@ -517,25 +479,6 @@
       &:hover .stat-icon {
         background: $accent-primary;
         color: $bg-primary;
-      }
-    }
-
-    @media (max-width: $mobile) {
-      padding: 10px 12px;
-      gap: 8px;
-
-      .stat-icon {
-        width: 32px;
-        height: 32px;
-        font-size: 0.9rem;
-      }
-
-      .stat-value {
-        font-size: 0.85rem;
-      }
-
-      .stat-label {
-        font-size: 0.6rem;
       }
     }
   }
@@ -574,15 +517,6 @@
   50% {
     transform: translateX(-130px) translateY(-10px);
   }
-
-  @media (max-width: $mobile) {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0px) scale(0.8);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-6px) scale(0.8);
-    }
-  }
 }
 
 @keyframes floatStatRight {
@@ -591,14 +525,5 @@
   }
   50% {
     transform: translateX(50px) translateY(-10px);
-  }
-
-  @media (max-width: $mobile) {
-    0%, 100% {
-      transform: translateX(-50%) translateY(0px) scale(0.8);
-    }
-    50% {
-      transform: translateX(-50%) translateY(-6px) scale(0.8);
-    }
   }
 }
