@@ -1,12 +1,12 @@
-import './About.scss'
+import "./About.scss";
 
 const About = () => {
   const stats = [
-    { number: '3+', label: 'Years Experience' },
-    { number: '50+', label: 'Projects Completed' },
-    { number: '30+', label: 'Happy Clients' },
-    { number: '10+', label: 'Technologies' },
-  ]
+    { number: "3+", label: "Years Experience" },
+    { number: "25+", label: "Hands-on Projects" },
+    { number: "10+", label: "Clients Worked With" },
+    { number: "10+", label: "Core Technologies" },
+  ];
 
   return (
     <section id="about" className="about">
@@ -31,16 +31,29 @@ const About = () => {
           <div className="about__text">
             <h3>Full stack developer based in Nova Scotia</h3>
             <p>
-           with a specialized background in the tech industry. I leverage my dual skillset of testing and development to build digital products that look exceptional and perform effectively. Focused on user-centric development and delivering cohesive end-to-end experiences.
+              with a specialized background in the tech industry. I leverage my
+              dual skillset of testing and development to build digital products
+              that look exceptional and perform effectively. Focused on
+              user-centric development and delivering cohesive end-to-end
+              experiences.
             </p>
             <p>
-              Every week, I host a Coding & Coffee session where students work through real world problems in a collaborative, low pressure environment. These sessions have become a space for code reviews, architectural discussions, and honest feedback: the kind of learning that happens when developers actually sit down and build together.
+              Every week, I host a Coding & Coffee session where students work
+              through real world problems in a collaborative, low pressure
+              environment. These sessions have become a space for code reviews,
+              architectural discussions, and honest feedback: the kind of
+              learning that happens when developers actually sit down and build
+              together.
             </p>
-            <p>I've worked across 50+ projects through academic programs, client work, and personal development—ranging from quick prototypes to fully deployed applications.</p>
+            <p>
+              I've worked across 50+ projects through academic programs, client
+              work, and personal development ranging from quick prototypes to
+              fully deployed applications.
+            </p>
             <p>
               When I'm not coding, you can find me exploring new technologies,
-              contributing to open source projects, or enjoying a good cup of coffee
-              while reading about the latest trends in web development.
+              contributing to open source projects, or enjoying a good cup of
+              coffee while reading about the latest trends in web development.
             </p>
 
             <div className="about__stats">
@@ -52,7 +65,11 @@ const About = () => {
               ))}
             </div>
 
-            <a href="/assets/docs/resume.pdf" className="btn btn-primary" download="Christopher_Britten_Resume.pdf">
+            <a
+              href="/assets/docs/resume.pdf"
+              className="btn btn-primary"
+              download="Christopher_Britten_Resume.pdf"
+            >
               <i className="fas fa-download"></i>
               Download CV
             </a>
@@ -60,7 +77,7 @@ const About = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;
