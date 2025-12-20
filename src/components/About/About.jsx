@@ -34,8 +34,9 @@ const About = () => {
            with a specialized background in the tech industry. I leverage my dual skillset of testing and development to build digital products that look exceptional and perform effectively. Focused on user-centric development and delivering cohesive end-to-end experiences.
             </p>
             <p>
-              Every week, I host a "Coding & Coffee" session where students work through real world problems in a collaborative, low pressure environment. These sessions have become a space for code reviews, architectural discussions, and honest feedback: the kind of learning that happens when developers actually sit down and build together.
+              Every week, I host a Coding & Coffee session where students work through real world problems in a collaborative, low pressure environment. These sessions have become a space for code reviews, architectural discussions, and honest feedback: the kind of learning that happens when developers actually sit down and build together.
             </p>
+            <p>I've worked across 50+ projects through academic programs, client work, and personal development—ranging from quick prototypes to fully deployed applications.</p>
             <p>
               When I'm not coding, you can find me exploring new technologies,
               contributing to open source projects, or enjoying a good cup of coffee
