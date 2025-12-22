@@ -1,27 +1,27 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef } from "react";
 import "./About.scss";
 
 const About = () => {
-  const contentRef = useRef(null)
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('visible')
+            entry.target.classList.add("visible");
           }
-        })
+        });
       },
       { threshold: 0.1 }
-    )
+    );
 
     if (contentRef.current) {
-      observer.observe(contentRef.current)
+      observer.observe(contentRef.current);
     }
 
-    return () => observer.disconnect()
-  }, [])
+    return () => observer.disconnect();
+  }, []);
   const stats = [
     { number: "3+", label: "Years Experience" },
     { number: "25+", label: "Hands-on Projects" },
@@ -52,20 +52,26 @@ const About = () => {
           <div className="about__text">
             <h3>Full stack developer based in Nova Scotia</h3>
             <p>
-     With experience across development and testing, I build and maintain digital products that balance  reliability and performance. I focus on user first solutions and systematic end to end experiences.
+              With experience across development and testing, I build and
+              maintain digital products that balance reliability and
+              performance. I focus on user first solutions and systematic end to
+              end experiences.
             </p>
             <p>
-         Each week, I run a Coding & Coffee session where developers come together to work through real world problems in a relaxed, supportive setting. The sessions often evolve into hands on coding, code reviews, architectural discussions, and open, constructive feedback.
+              Each week, I run a Coding & Coffee session where developers come
+              together to work through real world problems in a relaxed,
+              supportive setting. The sessions often evolve into hands on
+              coding, code reviews, architectural discussions, and open,
+              constructive feedback.
             </p>
             <p>
-              I've worked across projects through academic programs, client
-              work, and personal development ranging from quick prototypes to
+              I’ve worked across projects through academic programs, client
+              work, and personal development—ranging from quick prototypes to
               fully deployed applications.
             </p>
             <p>
-              When I'm not coding, you can find me exploring new technologies,
-              contributing to open source projects, or enjoying a good cup of
-              coffee while reading about the latest trends in web development.
+              My downtime usually involves tinkering with new projects, a strong
+              cup of coffee, and my dog, Mako.
             </p>
 
             <div className="about__stats">
