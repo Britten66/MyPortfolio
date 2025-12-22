@@ -3,6 +3,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
+    max-width: 100%;
 
     @media (max-width: $tablet) {
       grid-template-columns: 1fr;
@@ -11,6 +12,7 @@
 
     @media (max-width: $mobile) {
       gap: 20px;
+      width: 100%;
     }
   }
 
@@ -20,6 +22,9 @@
     opacity: 0;
     transform: translateY(30px);
     transition: all 0.6s ease-out;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 
     &.visible {
       opacity: 1;
@@ -89,6 +94,7 @@
     gap: 15px;
 
     @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
       gap: 12px;
     }
   }
@@ -104,6 +110,9 @@
   border: 1px solid transparent;
   transition: all $transition-medium;
   position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
 
   &:hover {
     border-color: rgba(255, 255, 255, 0.3);
@@ -140,6 +149,8 @@
     color: #ffffff;
     transition: all $transition-medium;
     flex: 1;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 
     @media (max-width: $mobile) {
       font-size: 0.85rem;
@@ -161,6 +172,139 @@
     @media (max-width: $mobile) {
       font-size: 0.6rem;
       padding: 2px 6px;
+    }
+  }
+}
+
+.skill-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.skill-modal {
+  @include glass-card;
+  max-width: 500px;
+  width: 100%;
+  padding: 40px;
+  position: relative;
+  animation: slideUp 0.3s ease-out;
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: $mobile) {
+    padding: 30px 25px;
+    max-width: 100%;
+  }
+
+  &__close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    border: none;
+    color: $text-secondary;
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all $transition-medium;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: $text-primary;
+      transform: rotate(90deg);
+    }
+
+    @media (max-width: $mobile) {
+      top: 15px;
+      right: 15px;
+      font-size: 1.3rem;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $border-color;
+
+    @media (max-width: $mobile) {
+      margin-bottom: 20px;
+      padding-bottom: 15px;
+      gap: 12px;
+    }
+
+    i {
+      font-size: 2.5rem;
+      color: $accent-primary;
+
+      @media (max-width: $mobile) {
+        font-size: 2rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: $text-primary;
+      margin: 0;
+      flex: 1;
+
+      @media (max-width: $mobile) {
+        font-size: 1.2rem;
+      }
+    }
+
+    .learning-badge {
+      margin-left: auto;
+    }
+  }
+
+  &__content {
+    p {
+      color: $text-secondary;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+
+      @media (max-width: $mobile) {
+        font-size: 0.95rem;
+      }
     }
   }
 }

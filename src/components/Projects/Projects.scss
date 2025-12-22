@@ -184,13 +184,23 @@
         }
       }
 
-      &:last-child {
+      &:last-child:not(:first-child) {
         border: 1px solid $border-color;
         color: $text-secondary;
 
         &:hover {
           border-color: $accent-primary;
           color: $text-primary;
+        }
+      }
+
+      &:only-child {
+        border: 1px solid $border-color;
+        color: #000000;
+
+        &:hover {
+          border-color: $accent-primary;
+          color: #000000;
         }
       }
     }
