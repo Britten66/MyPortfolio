@@ -26,10 +26,12 @@ const Skills = () => {
 
   const closeModal = () => {
     setSelectedSkill(null)
+    document.body.style.overflow = 'unset'
   }
 
   const openModal = (skill) => {
     setSelectedSkill(skill)
+    document.body.style.overflow = 'hidden'
   }
 
   const skillCategories = [
@@ -103,7 +105,14 @@ const Skills = () => {
               </div>
               <div className="skills__list">
                 {category.skills.map((skill, i) => (
-                  <div key={i} className="skill-item" onClick={() => openModal(skill)}>
+                  <div
+                    key={i}
+                    className="skill-item"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      openModal(skill)
+                    }}
+                  >
                     <i className={skill.icon}></i>
                     <span>{skill.name}</span>
                     {skill.learning && <span className="learning-badge">Learning</span>}
@@ -116,9 +125,22 @@ const Skills = () => {
       </div>
 
       {selectedSkill && (
-        <div className="skill-modal-overlay" onClick={closeModal}>
+        <div
+          className="skill-modal-overlay"
+          onClick={(e) => {
+            if (e.target === e.currentTarget) {
+              closeModal()
+            }
+          }}
+        >
           <div className="skill-modal" onClick={(e) => e.stopPropagation()}>
-            <button className="skill-modal__close" onClick={closeModal}>
+            <button
+              className="skill-modal__close"
+              onClick={(e) => {
+                e.stopPropagation()
+                closeModal()
+              }}
+            >
               <i className="fas fa-times"></i>
             </button>
             <div className="skill-modal__header">
