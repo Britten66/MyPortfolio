@@ -17,6 +17,7 @@ body {
   color: $text-primary;
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .app {
@@ -71,6 +72,7 @@ body {
 section {
   padding: $section-padding;
   position: relative;
+  content-visibility: auto;
 
   @media (max-width: $tablet) {
     padding: 60px 0;
@@ -78,6 +80,19 @@ section {
 
   @media (max-width: $mobile) {
     padding: 40px 0;
+  }
+}
+
+// Prevent flash of unstyled content for animated sections
+.about__content,
+.experience__timeline,
+.projects__grid,
+.contact__content,
+.skills__category {
+  visibility: hidden;
+
+  &.visible {
+    visibility: visible;
   }
 }
 
