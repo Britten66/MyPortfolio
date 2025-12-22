@@ -3,11 +3,7 @@ import './Skills.scss'
 
 const Skills = () => {
   const categoriesRef = useRef([])
-  const [selectedSkill, setSelectedSkill] = useState(null)
-  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null)
-  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
-  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
-  const tooltipRef = useRef(null)
+  const [openModals, setOpenModals] = useState({})
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -28,52 +24,32 @@ const Skills = () => {
     return () => observer.disconnect()
   }, [])
 
-  const closeModal = () => {
-    setSelectedSkill(null)
-    setSelectedCategoryIndex(null)
+  const closeModal = (categoryIndex) => {
+    setOpenModals(prev => {
+      const newModals = { ...prev }
+      delete newModals[categoryIndex]
+      return newModals
+    })
   }
 
   const openModal = (skill, categoryIndex, event) => {
-    const rect = event.currentTarget.getBoundingClientRect()
-    setClickPosition({
-      x: rect.left + rect.width / 2,
-      y: rect.top + rect.height / 2
-    })
-    setSelectedSkill(skill)
-    setSelectedCategoryIndex(categoryIndex)
+    event.stopPropagation()
+    setOpenModals(prev => ({
+      ...prev,
+      [categoryIndex]: skill
+    }))
   }
 
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape' && selectedSkill) {
-        closeModal()
+      if (e.key === 'Escape' && Object.keys(openModals).length > 0) {
+        setOpenModals({})
       }
     }
 
-    if (selectedSkill) {
-      document.addEventListener('keydown', handleEscape)
-      return () => document.removeEventListener('keydown', handleEscape)
-    }
-  }, [selectedSkill])
-
-  useEffect(() => {
-    if (selectedSkill && tooltipRef.current) {
-      const updateTooltipPosition = () => {
-        const rect = tooltipRef.current.getBoundingClientRect()
-        setTooltipPosition({
-          x: rect.left + rect.width / 2,
-          y: rect.top + rect.height / 2
-        })
-      }
-
-      // Update position after tooltip renders
-      setTimeout(updateTooltipPosition, 0)
-
-      // Update on window resize
-      window.addEventListener('resize', updateTooltipPosition)
-      return () => window.removeEventListener('resize', updateTooltipPosition)
-    }
-  }, [selectedSkill])
+    document.addEventListener('keydown', handleEscape)
+    return () => document.removeEventListener('keydown', handleEscape)
+  }, [openModals])
 
   const skillCategories = [
     {
@@ -149,10 +125,7 @@ const Skills = () => {
                   <div
                     key={i}
                     className="skill-item"
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      openModal(skill, index, e)
-                    }}
+                    onClick={(e) => openModal(skill, index, e)}
                   >
                     <i className={skill.icon}></i>
                     <span>{skill.name}</span>
@@ -160,23 +133,26 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
-              {selectedSkill && selectedCategoryIndex === index && (
-                <div className="skill-tooltip" ref={tooltipRef}>
-                  <button
-                    className="skill-tooltip__close"
-                    onClick={closeModal}
-                  >
-                    <i className="fas fa-times"></i>
-                  </button>
-                  <div className="skill-tooltip__header">
-                    <i className={selectedSkill.icon}></i>
-                    <h3>{selectedSkill.name}</h3>
-                    {selectedSkill.learning && <span className="learning-badge">Learning</span>}
+              {openModals[index] && (
+                <>
+                  <div className="skill-tooltip-backdrop" onClick={() => closeModal(index)}></div>
+                  <div className="skill-tooltip">
+                    <button
+                      className="skill-tooltip__close"
+                      onClick={() => closeModal(index)}
+                    >
+                      <i className="fas fa-times"></i>
+                    </button>
+                    <div className="skill-tooltip__header">
+                      <i className={openModals[index].icon}></i>
+                      <h3>{openModals[index].name}</h3>
+                      {openModals[index].learning && <span className="learning-badge">Learning</span>}
+                    </div>
+                    <div className="skill-tooltip__content">
+                      <p>{openModals[index].description}</p>
+                    </div>
                   </div>
-                  <div className="skill-tooltip__content">
-                    <p>{selectedSkill.description}</p>
-                  </div>
-                </div>
+                </>
               )}
             </div>
           ))}
