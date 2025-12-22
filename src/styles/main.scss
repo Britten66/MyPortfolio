@@ -191,14 +191,27 @@ section {
   color: $text-secondary;
   font-size: 0.9rem;
 
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 0;
+
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      gap: 1em;
+    }
+  }
+
   .duck-icon {
     height: 6rem;
     width: 6rem;
     object-fit: contain;
     display: inline-block;
-    vertical-align: middle;
+    flex-shrink: 0;
     filter: invert(1);
-    margin: 0 0.5em;
     cursor: pointer;
     transition: all $transition-medium;
 
