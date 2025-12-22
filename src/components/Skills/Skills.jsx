@@ -4,7 +4,9 @@ import './Skills.scss'
 const Skills = () => {
   const categoriesRef = useRef([])
   const [selectedSkill, setSelectedSkill] = useState(null)
-  const modalOpeningRef = useRef(false)
+  const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
+  const tooltipRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -25,6 +27,19 @@ const Skills = () => {
     return () => observer.disconnect()
   }, [])
 
+  const closeModal = () => {
+    setSelectedSkill(null)
+  }
+
+  const openModal = (skill, event) => {
+    const rect = event.currentTarget.getBoundingClientRect()
+    setClickPosition({
+      x: rect.left + rect.width / 2,
+      y: rect.top + rect.height / 2
+    })
+    setSelectedSkill(skill)
+  }
+
   useEffect(() => {
     const handleEscape = (e) => {
       if (e.key === 'Escape' && selectedSkill) {
@@ -38,21 +53,24 @@ const Skills = () => {
     }
   }, [selectedSkill])
 
-  const closeModal = () => {
-    setSelectedSkill(null)
-    document.body.style.overflow = 'unset'
-  }
+  useEffect(() => {
+    if (selectedSkill && tooltipRef.current) {
+      const updateTooltipPosition = () => {
+        const rect = tooltipRef.current.getBoundingClientRect()
+        setTooltipPosition({
+          x: rect.left + rect.width / 2,
+          y: rect.top + rect.height / 2
+        })
+      }
 
-  const openModal = (skill) => {
-    modalOpeningRef.current = true
-    setSelectedSkill(skill)
-    document.body.style.overflow = 'hidden'
+      // Update position after tooltip renders
+      setTimeout(updateTooltipPosition, 0)
 
-    // Prevent immediate close from the same click event
-    setTimeout(() => {
-      modalOpeningRef.current = false
-    }, 100)
-  }
+      // Update on window resize
+      window.addEventListener('resize', updateTooltipPosition)
+      return () => window.removeEventListener('resize', updateTooltipPosition)
+    }
+  }, [selectedSkill])
 
   const skillCategories = [
     {
@@ -130,7 +148,7 @@ const Skills = () => {
                     className="skill-item"
                     onClick={(e) => {
                       e.stopPropagation()
-                      openModal(skill)
+                      openModal(skill, e)
                     }}
                   >
                     <i className={skill.icon}></i>
@@ -145,33 +163,20 @@ const Skills = () => {
       </div>
 
       {selectedSkill && (
-        <div
-          className="skill-modal-overlay"
-          onClick={(e) => {
-            if (modalOpeningRef.current) return
-            if (e.target.classList.contains('skill-modal-overlay')) {
-              closeModal()
-            }
-          }}
-        >
-          <div className="skill-modal" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="skill-modal__close"
-              onClick={(e) => {
-                e.stopPropagation()
-                closeModal()
-              }}
-            >
-              <i className="fas fa-times"></i>
-            </button>
-            <div className="skill-modal__header">
-              <i className={selectedSkill.icon}></i>
-              <h3>{selectedSkill.name}</h3>
-              {selectedSkill.learning && <span className="learning-badge">Learning</span>}
-            </div>
-            <div className="skill-modal__content">
-              <p>{selectedSkill.description}</p>
-            </div>
+        <div className="skill-tooltip" ref={tooltipRef}>
+          <button
+            className="skill-tooltip__close"
+            onClick={closeModal}
+          >
+            <i className="fas fa-times"></i>
+          </button>
+          <div className="skill-tooltip__header">
+            <i className={selectedSkill.icon}></i>
+            <h3>{selectedSkill.name}</h3>
+            {selectedSkill.learning && <span className="learning-badge">Learning</span>}
+          </div>
+          <div className="skill-tooltip__content">
+            <p>{selectedSkill.description}</p>
           </div>
         </div>
       )}

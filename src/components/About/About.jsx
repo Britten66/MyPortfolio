@@ -52,19 +52,10 @@ const About = () => {
           <div className="about__text">
             <h3>Full stack developer based in Nova Scotia</h3>
             <p>
-              with a specialized background in the tech industry. I leverage my
-              dual skillset of testing and development to build digital products
-              that look exceptional and perform effectively. Focused on
-              user-centric development and delivering cohesive end-to-end
-              experiences.
+     With experience across development and testing, I build and maintain digital products that balance  reliability and performance. I focus on user first solutions and systematic end to end experiences.
             </p>
             <p>
-              Every week, I host a Coding & Coffee session where students work
-              through real world problems in a collaborative, low pressure
-              environment. These sessions have become a space for code reviews,
-              architectural discussions, and honest feedback: the kind of
-              learning that happens when developers actually sit down and build
-              together.
+         Each week, I run a Coding & Coffee session where developers come together to work through real world problems in a relaxed, supportive setting. The sessions often evolve into hands on coding, code reviews, architectural discussions, and open, constructive feedback.
             </p>
             <p>
               I've worked across projects through academic programs, client
