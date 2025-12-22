@@ -57,7 +57,9 @@ const About = () => {
             </p>
             <p>
           
-Beyond the code, I lead Coding & Coffee, a weekly collaborative session where developers tackle real world problems through hands on reviews and architectural discussions.
+With experience across development and testing, I build software that's reliable, usable, and performant.
+
+I also organize Coding & Coffee, a weekly collaborative session where developers tackle real-world problems. It's a space for hands-on code reviews, architectural discussions, and honest feedback.
 
 
             </p>
