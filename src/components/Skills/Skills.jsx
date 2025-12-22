@@ -4,6 +4,7 @@ import './Skills.scss'
 const Skills = () => {
   const categoriesRef = useRef([])
   const [selectedSkill, setSelectedSkill] = useState(null)
+  const modalOpeningRef = useRef(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -43,8 +44,14 @@ const Skills = () => {
   }
 
   const openModal = (skill) => {
+    modalOpeningRef.current = true
     setSelectedSkill(skill)
     document.body.style.overflow = 'hidden'
+
+    // Prevent immediate close from the same click event
+    setTimeout(() => {
+      modalOpeningRef.current = false
+    }, 100)
   }
 
   const skillCategories = [
@@ -141,6 +148,7 @@ const Skills = () => {
         <div
           className="skill-modal-overlay"
           onClick={(e) => {
+            if (modalOpeningRef.current) return
             if (e.target.classList.contains('skill-modal-overlay')) {
               closeModal()
             }
