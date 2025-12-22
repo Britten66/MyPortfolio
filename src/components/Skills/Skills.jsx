@@ -127,19 +127,16 @@ const Skills = () => {
       {selectedSkill && (
         <div
           className="skill-modal-overlay"
-          onClick={(e) => {
+          onMouseDown={(e) => {
             if (e.target === e.currentTarget) {
               closeModal()
             }
           }}
         >
-          <div className="skill-modal" onClick={(e) => e.stopPropagation()}>
+          <div className="skill-modal">
             <button
               className="skill-modal__close"
-              onClick={(e) => {
-                e.stopPropagation()
-                closeModal()
-              }}
+              onClick={closeModal}
             >
               <i className="fas fa-times"></i>
             </button>
