@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import Navbar from './components/Navbar/Navbar'
 import Hero from './components/Hero/Hero'
 import About from './components/About/About'
@@ -21,6 +22,7 @@ function App() {
       <footer className="footer">
         <p>&copy; {new Date().getFullYear()} Christopher Britten. All rights reserved.</p>
       </footer>
+      <Analytics />
     </div>
   )
 }
