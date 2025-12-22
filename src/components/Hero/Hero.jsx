@@ -119,10 +119,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <div className="hero__scroll-indicator">
-        <span>Scroll Down</span>
-        <i className="fas fa-chevron-down"></i>
-      </div>
     </section>
   )
 }

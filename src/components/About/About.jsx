@@ -1,6 +1,27 @@
+import { useEffect, useRef } from 'react'
 import "./About.scss";
 
 const About = () => {
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   const stats = [
     { number: "3+", label: "Years Experience" },
     { number: "25+", label: "Hands-on Projects" },
@@ -15,7 +36,7 @@ const About = () => {
           About <span>Me</span>
         </h2>
 
-        <div className="about__content">
+        <div className="about__content" ref={contentRef}>
           <div className="about__image">
             <div className="about__image-wrapper">
               <div className="about__image-placeholder">

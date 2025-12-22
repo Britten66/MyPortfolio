@@ -1,8 +1,28 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser'
 import './Contact.scss'
 
 const Contact = () => {
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (contentRef.current) {
+      observer.observe(contentRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -75,7 +95,7 @@ const Contact = () => {
           Get In <span>Touch</span>
         </h2>
 
-        <div className="contact__content">
+        <div className="contact__content" ref={contentRef}>
           <div className="contact__info">
             <h3>Let's Connect</h3>
             <p>

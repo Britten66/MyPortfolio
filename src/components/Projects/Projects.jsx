@@ -1,6 +1,27 @@
+import { useEffect, useRef } from 'react'
 import './Projects.scss'
 
 const Projects = () => {
+  const gridRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   const projects = [
     {
       title: 'S2 Sprint Final',
@@ -77,7 +98,7 @@ const Projects = () => {
           My <span>Projects</span>
         </h2>
 
-        <div className="projects__grid">
+        <div className="projects__grid" ref={gridRef}>
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-card__content">

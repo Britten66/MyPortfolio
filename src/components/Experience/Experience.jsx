@@ -1,6 +1,27 @@
+import { useEffect, useRef } from 'react'
 import "./Experience.scss";
 
 const Experience = () => {
+  const timelineRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible')
+          }
+        })
+      },
+      { threshold: 0.1 }
+    )
+
+    if (timelineRef.current) {
+      observer.observe(timelineRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
   const experiences = [
     {
       title: "Diploma in Full Stack Software Development",
@@ -56,7 +77,7 @@ const Experience = () => {
           My <span>Experience</span>
         </h2>
 
-        <div className="experience__timeline">
+        <div className="experience__timeline" ref={timelineRef}>
           {experiences.map((exp, index) => (
             <div key={index} className="experience__item">
               <div className="experience__marker">
