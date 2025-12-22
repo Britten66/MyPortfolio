@@ -24,6 +24,19 @@ const Skills = () => {
     return () => observer.disconnect()
   }, [])
 
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && selectedSkill) {
+        closeModal()
+      }
+    }
+
+    if (selectedSkill) {
+      document.addEventListener('keydown', handleEscape)
+      return () => document.removeEventListener('keydown', handleEscape)
+    }
+  }, [selectedSkill])
+
   const closeModal = () => {
     setSelectedSkill(null)
     document.body.style.overflow = 'unset'
@@ -127,16 +140,19 @@ const Skills = () => {
       {selectedSkill && (
         <div
           className="skill-modal-overlay"
-          onMouseDown={(e) => {
-            if (e.target === e.currentTarget) {
+          onClick={(e) => {
+            if (e.target.classList.contains('skill-modal-overlay')) {
               closeModal()
             }
           }}
         >
-          <div className="skill-modal">
+          <div className="skill-modal" onClick={(e) => e.stopPropagation()}>
             <button
               className="skill-modal__close"
-              onClick={closeModal}
+              onClick={(e) => {
+                e.stopPropagation()
+                closeModal()
+              }}
             >
               <i className="fas fa-times"></i>
             </button>
