@@ -32,7 +32,7 @@ const Experience = () => {
       description: [
         "Specializing in Modern Web Stack (React, Node.js)",
         "Core Technical Focus: JavaScript, Java, SQL, REST APIs",
-        "Applied Learning: Test-Driven Development, Agile, Git Version Control",
+        "Applied Learning: Test Driven Development, Agile, Git Version Control",
       ],
     },
     {
