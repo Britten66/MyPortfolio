@@ -4,6 +4,7 @@ import './Skills.scss'
 const Skills = () => {
   const categoriesRef = useRef([])
   const [selectedSkill, setSelectedSkill] = useState(null)
+  const [selectedCategoryIndex, setSelectedCategoryIndex] = useState(null)
   const [clickPosition, setClickPosition] = useState({ x: 0, y: 0 })
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
   const tooltipRef = useRef(null)
@@ -29,15 +30,17 @@ const Skills = () => {
 
   const closeModal = () => {
     setSelectedSkill(null)
+    setSelectedCategoryIndex(null)
   }
 
-  const openModal = (skill, event) => {
+  const openModal = (skill, categoryIndex, event) => {
     const rect = event.currentTarget.getBoundingClientRect()
     setClickPosition({
       x: rect.left + rect.width / 2,
       y: rect.top + rect.height / 2
     })
     setSelectedSkill(skill)
+    setSelectedCategoryIndex(categoryIndex)
   }
 
   useEffect(() => {
@@ -148,7 +151,7 @@ const Skills = () => {
                     className="skill-item"
                     onClick={(e) => {
                       e.stopPropagation()
-                      openModal(skill, e)
+                      openModal(skill, index, e)
                     }}
                   >
                     <i className={skill.icon}></i>
@@ -157,29 +160,28 @@ const Skills = () => {
                   </div>
                 ))}
               </div>
+              {selectedSkill && selectedCategoryIndex === index && (
+                <div className="skill-tooltip" ref={tooltipRef}>
+                  <button
+                    className="skill-tooltip__close"
+                    onClick={closeModal}
+                  >
+                    <i className="fas fa-times"></i>
+                  </button>
+                  <div className="skill-tooltip__header">
+                    <i className={selectedSkill.icon}></i>
+                    <h3>{selectedSkill.name}</h3>
+                    {selectedSkill.learning && <span className="learning-badge">Learning</span>}
+                  </div>
+                  <div className="skill-tooltip__content">
+                    <p>{selectedSkill.description}</p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
         </div>
       </div>
-
-      {selectedSkill && (
-        <div className="skill-tooltip" ref={tooltipRef}>
-          <button
-            className="skill-tooltip__close"
-            onClick={closeModal}
-          >
-            <i className="fas fa-times"></i>
-          </button>
-          <div className="skill-tooltip__header">
-            <i className={selectedSkill.icon}></i>
-            <h3>{selectedSkill.name}</h3>
-            {selectedSkill.learning && <span className="learning-badge">Learning</span>}
-          </div>
-          <div className="skill-tooltip__content">
-            <p>{selectedSkill.description}</p>
-          </div>
-        </div>
-      )}
     </section>
   )
 }

@@ -25,6 +25,7 @@
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+    position: relative;
 
     &.visible {
       opacity: 1;
@@ -214,8 +215,9 @@
   }
 
   @media (max-width: $mobile) {
+    position: absolute;
     padding: 25px 20px;
-    width: 85%;
+    width: calc(100% - 30px);
     max-width: none;
   }
 
