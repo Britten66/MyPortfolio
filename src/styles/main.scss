@@ -190,6 +190,28 @@ section {
   border-top: 1px solid $border-color;
   color: $text-secondary;
   font-size: 0.9rem;
+
+  .duck-icon {
+    height: 6rem;
+    width: 6rem;
+    object-fit: contain;
+    display: inline-block;
+    vertical-align: middle;
+    filter: invert(1);
+    margin: 0 0.5em;
+    cursor: pointer;
+    transition: all $transition-medium;
+
+    &:hover {
+      transform: translateY(-5px);
+      filter: invert(1) brightness(1.2);
+    }
+
+    @media (max-width: $mobile) {
+      height: 4rem;
+      width: 4rem;
+    }
+  }
 }
 
 // Scrollbar

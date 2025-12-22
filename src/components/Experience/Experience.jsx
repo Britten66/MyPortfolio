@@ -60,7 +60,7 @@ const Experience = () => {
     {
       title: "SDET (Automation Tester)",
       company: "Per Fleet",
-      location: "Canada",
+      location: "Remote",
       period: "2020 - 2022",
       description: [
         "Built automated testing frameworks (Selenium/Cucumber) to accelerate software release cycles",

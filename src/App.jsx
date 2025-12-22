@@ -20,7 +20,7 @@ function App() {
         <Contact />
       </main>
       <footer className="footer">
-        <p>&copy; {new Date().getFullYear()} Christopher Britten. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Christopher Britten <img src="/assets/images/toller.png" alt="" className="duck-icon" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} /> All rights reserved.</p>
       </footer>
       <Analytics />
     </div>
