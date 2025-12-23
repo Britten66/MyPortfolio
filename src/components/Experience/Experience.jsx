@@ -37,13 +37,14 @@ const Experience = () => {
     },
     {
       title: "Web Developer (Contract)",
-      company: "FireQ Emergency Management Software",
+      company: "Breton SmarTek — FireQ Emergency Management Software",
       location: "Nova Scotia",
       period: "2025 - Present",
       description: [
-        "Architecting production UI components for mission critical emergency software using React and WordPress",
-        "Delivering responsive, cross browser solutions while completing advanced Full Stack certification",
-        "Tech Stack: React, JavaScript, Elementor, CSS3",
+        "Redesigned the primary landing page and product pages to modernize the UI/UX for mission-critical emergency response software used by first responders",
+        "Built custom interactive components including subscription pricing cards, auto-scrolling testimonial carousels, and branded headers using HTML, CSS, and JavaScript within WordPress/Elementor",
+        "Resolved cross browser and responsive display issues across mobile and desktop while improving site accessibility and navigation flow",
+        "Tech Stack: JavaScript, HTML5, CSS3, WordPress, Elementor",
       ],
     },
     {
