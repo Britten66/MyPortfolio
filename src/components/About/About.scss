@@ -111,21 +111,11 @@
     }
 
     .btn {
-      position: relative;
-      justify-content: center;
-
-      i {
-        position: absolute;
-        left: 32px;
-      }
+      display: inline-flex;
 
       @media (max-width: $mobile) {
         display: flex;
         margin: 0 auto;
-
-        i {
-          left: 28px;
-        }
       }
     }
   }
