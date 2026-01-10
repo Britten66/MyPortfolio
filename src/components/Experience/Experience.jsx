@@ -41,10 +41,10 @@ const Experience = () => {
       location: "Nova Scotia",
       period: "2025 - Present",
       description: [
-        "Redesigned the primary landing page and product pages to modernize the UI/UX for mission-critical emergency response software used by first responders",
-        "Built custom interactive components including subscription pricing cards, auto-scrolling testimonial carousels, and branded headers using HTML, CSS, and JavaScript within WordPress/Elementor",
-        "Resolved cross browser and responsive display issues across mobile and desktop while improving site accessibility and navigation flow",
-        "Tech Stack: JavaScript, HTML5, CSS3, WordPress, Elementor",
+        "Developed and maintained production WordPress sites for emergency management and healthcare software products, working independently in a fully remote environment using Trello for task tracking",
+        "Built custom interactive components (carousels, modal popups, responsive grid systems, and subscription pricing cards) using WordPress, Elementor, HTML, CSS, and JavaScript beyond default theme capabilities",
+        "Implemented SSL certificates, repaired broken internal links, and integrated app store download CTAs to improve site reliability and conversion flow",
+        "Debugged and resolved cross-browser and responsive layout issues using Chrome DevTools, ensuring consistent behavior across mobile and desktop browsers",
       ],
     },
     {
