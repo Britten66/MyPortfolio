@@ -52,13 +52,22 @@ const About = () => {
           <div className="about__text">
             <h3>Full stack developer based in Nova Scotia</h3>
             <p>
-              Full stack developer based in Nova Scotia with experience across development and testing workflows. I focus on building maintainable, performant applications by emphasizing code quality, testing, and practical implementation from the start.
+              with experience across development and testing workflows. I focus
+              on building maintainable, performant applications by emphasizing
+              code quality, testing, and practical implementation from the
+              start.
             </p>
             <p>
-              I've contributed to client facing work and full stack deployments, working across front end, back end, and testing layers. I also organize Coding & Coffee, a weekly collaborative session where developers review code, discuss their code, and work through real world problems together.
+              I've contributed to client facing work and full stack deployments,
+              working across front end, back end, and testing layers. I also
+              organize Coding & Coffee, a weekly collaborative session where
+              developers review code, discuss their code, and work through real
+              world problems together.
             </p>
             <p>
-              Outside of development, I enjoy experimenting with new technologies, a good cup of coffee, and spending time with my dog, Mako.
+              Outside of development, I enjoy experimenting with new
+              technologies, a good cup of coffee, and spending time with my dog,
+              Mako.
             </p>
 
             <div className="about__stats">
