@@ -85,7 +85,7 @@ const Contact = () => {
     {
       icon: 'fas fa-map-marker-alt',
       label: 'Location',
-      value: 'Cape Breton, Nova Scotia',
+      value: 'Nova Scotia',
       href: null,
     },
     {
