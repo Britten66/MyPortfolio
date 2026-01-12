@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       title: 'Countries API Explorer',
-      description: 'A React application that fetches data from the Rest Countries API and displays neighboring countries filtered by first-letter criteria.',
+      description: 'A React application that fetches data from the REST Countries API and displays neighboring countries filtered by first-letter criteria.',
       image: null,
       tags: ['React', 'JavaScript', 'REST API'],
       liveUrl: 'https://6930fae25f81be0008bcc412--s2-qap3.netlify.app/',
