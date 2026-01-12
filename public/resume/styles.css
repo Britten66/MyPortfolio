@@ -320,11 +320,36 @@ body {
     body {
         background: white;
         padding: 0;
+        margin: 0;
     }
 
     .container {
         box-shadow: none;
         border-radius: 0;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .section {
+        page-break-inside: avoid;
+        animation: none;
+    }
+
+    .job {
+        page-break-inside: avoid;
+    }
+
+    .action-button,
+    button {
+        display: none !important;
+    }
+
+    .header {
+        padding: 30px;
+    }
+
+    .section {
+        padding: 20px 30px;
     }
 }
 

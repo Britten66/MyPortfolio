@@ -12,6 +12,7 @@ const Navbar = () => {
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
+    { name: 'Resume', href: '/resume/', external: true },
   ]
 
   useEffect(() => {
@@ -48,7 +49,10 @@ const Navbar = () => {
         <ul className={`navbar__links ${isMobileMenuOpen ? 'active' : ''}`}>
           {navLinks.map((link) => (
             <li key={link.name}>
-              <a href={link.href} onClick={handleLinkClick}>
+              <a
+                href={link.href}
+                onClick={handleLinkClick}
+              >
                 {link.name}
               </a>
             </li>
