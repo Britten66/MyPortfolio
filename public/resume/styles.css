@@ -14,6 +14,34 @@ body {
     min-height: 100vh;
 }
 
+/* Action Buttons */
+.action-buttons {
+    max-width: 1000px;
+    margin: 0 auto 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.action-btn {
+    background: #4a4a4a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: inline-block;
+}
+
+@media print {
+    .action-buttons {
+        display: none;
+    }
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
