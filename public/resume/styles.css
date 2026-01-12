@@ -16,11 +16,12 @@ body {
 
 /* Action Buttons */
 .action-buttons {
-    max-width: 1000px;
-    margin: 0 auto 20px;
+    position: fixed;
+    right: 40px;
+    top: 40px;
     display: flex;
     gap: 15px;
-    justify-content: flex-end;
+    z-index: 1000;
 }
 
 .action-btn {
