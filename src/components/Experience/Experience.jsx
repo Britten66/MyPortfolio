@@ -55,7 +55,7 @@ const Experience = () => {
       title: "Program Support / Data Administrator (Federal Government)",
       company: "Immigration, Refugees and Citizenship Canada",
       location: "Canada",
-      period: "2022 - 2024",
+      period: "Sept 2023 - May 2024",
       description: [
         "Supported federal immigration case processing operations by managing applicant data in the Global Case Management System (GCMS) to ensure data accuracy and regulatory compliance for citizenship and immigration programs",
         "Processed and validated applicant information within GCMS while maintaining data integrity standards required for federal compliance audits and program reporting",
@@ -68,7 +68,7 @@ const Experience = () => {
       title: "SDET (Automation Tester)",
       company: "Per Fleet",
       location: "Remote",
-      period: "2020 - 2022",
+      period: "Jan 2021 - Aug 2023",
       description: [
         "Contributed to automated testing efforts for fleet management software under contract engagement while executing test strategies and supporting quality assurance across multiple release cycles in a collaborative development environment with on site training involvement",
         "Built custom test automation framework from scratch using Maven for dependency management, Selenium WebDriver for browser automation, and Cucumber BDD for behavior driven test scenarios to reduce manual regression testing time and support software delivery timelines",
