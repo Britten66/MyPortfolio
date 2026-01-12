@@ -80,12 +80,13 @@ const About = () => {
             </div>
 
             <a
-              href="/assets/docs/resume.pdf"
+              href="/resume"
               className="btn btn-primary"
-              download="Christopher_Britten_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              <i className="fas fa-download"></i>
-              Download CV
+              <i className="fas fa-file-alt"></i>
+              View Resume
             </a>
           </div>
         </div>
