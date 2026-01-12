@@ -14,28 +14,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Fade-in animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe all sections
-document.querySelectorAll('.section').forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(20px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
+// Removed slow scroll animations for better performance
 
 // Add simple download button
 function createActionButton() {
@@ -70,10 +49,6 @@ function createActionButton() {
 // Initialize all features
 document.addEventListener('DOMContentLoaded', () => {
     createActionButton();
-
-    // Add fade-in to header
-    const header = document.querySelector('.header');
-    header.style.animation = 'fadeIn 1s ease-in-out';
 });
 
 // Keyboard shortcuts

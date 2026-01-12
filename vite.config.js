@@ -9,5 +9,23 @@ export default defineConfig({
         additionalData: `@import "./src/styles/_variables.scss";\n`
       }
     }
+  },
+  build: {
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true
+      }
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'fontawesome': ['@fortawesome/fontawesome-free']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 })

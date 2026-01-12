@@ -316,7 +316,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 5px;
     }
 
     .container {
@@ -324,21 +324,22 @@ body {
     }
 
     .header {
-        padding: 30px 20px;
+        padding: 25px 15px;
     }
 
     .name {
-        font-size: 2em;
-        letter-spacing: 2px;
+        font-size: 1.5em;
+        letter-spacing: 1px;
     }
 
     .title {
-        font-size: 1.2em;
+        font-size: 1em;
     }
 
     .contact-info {
         flex-direction: column;
         gap: 5px;
+        font-size: 0.85em;
     }
 
     .separator {
@@ -346,15 +347,69 @@ body {
     }
 
     .section {
-        padding: 20px;
+        padding: 15px;
+    }
+
+    .section-title {
+        font-size: 1.3em;
+    }
+
+    .summary {
+        font-size: 0.9em;
+        line-height: 1.6;
     }
 
     .skills-grid {
         flex-direction: column;
+        gap: 8px;
+    }
+
+    .skill-item {
+        font-size: 0.85em;
+        padding: 8px 12px;
     }
 
     .tech-skills-grid {
         grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .tech-item {
+        font-size: 0.85em;
+    }
+
+    .job-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .job-title {
+        font-size: 1em;
+    }
+
+    .company {
+        font-size: 0.85em;
+    }
+
+    .job-date {
+        font-size: 0.8em;
+        padding: 4px 10px;
+    }
+
+    .job-description li {
+        font-size: 0.85em;
+        line-height: 1.5;
+        margin-bottom: 8px;
+    }
+
+    .additional-info {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .info-item {
+        padding: 15px;
     }
 
     .job-header {
