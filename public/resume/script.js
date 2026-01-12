@@ -37,95 +37,37 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Add print button functionality
-function createPrintButton() {
-    const printBtn = document.createElement('button');
-    printBtn.innerHTML = '🖨️ Print Resume';
-    printBtn.className = 'print-button';
-    printBtn.onclick = () => window.print();
+// Add simple download button
+function createActionButton() {
+    const actionBtn = document.createElement('a');
+    actionBtn.innerHTML = '📄 Download Resume';
+    actionBtn.className = 'action-button';
+    actionBtn.href = 'Christopher Britten Resume  PUBLIC.pdf';
+    actionBtn.download = 'Christopher_Britten_Resume.pdf';
 
-    // Style the button
-    printBtn.style.cssText = `
+    // Style the button - simple grey bubble
+    actionBtn.style.cssText = `
         position: fixed;
         bottom: 30px;
         right: 30px;
-        background: linear-gradient(135deg, #141e30 0%, #243b55 100%);
+        background: #4a4a4a;
         color: white;
         border: none;
-        padding: 15px 25px;
+        padding: 12px 20px;
         border-radius: 50px;
-        font-size: 16px;
-        font-weight: 600;
+        font-size: 14px;
+        font-weight: 500;
         cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         z-index: 1000;
+        text-decoration: none;
+        display: inline-block;
     `;
 
-    printBtn.onmouseover = () => {
-        printBtn.style.transform = 'translateY(-3px)';
-        printBtn.style.boxShadow = '0 8px 20px rgba(0, 212, 255, 0.6)';
-        printBtn.style.border = '1px solid #00d4ff';
-    };
-
-    printBtn.onmouseout = () => {
-        printBtn.style.transform = 'translateY(0)';
-        printBtn.style.boxShadow = '0 5px 15px rgba(0, 212, 255, 0.4)';
-        printBtn.style.border = 'none';
-    };
-
-    document.body.appendChild(printBtn);
+    document.body.appendChild(actionBtn);
 }
 
-// Add download PDF button
-function createDownloadButton() {
-    const downloadBtn = document.createElement('button');
-    downloadBtn.innerHTML = '📄 Download PDF';
-    downloadBtn.className = 'download-button';
 
-    // Style the button
-    downloadBtn.style.cssText = `
-        position: fixed;
-        bottom: 90px;
-        right: 30px;
-        background: linear-gradient(135deg, #0f2027 0%, #2c5364 100%);
-        color: white;
-        border: none;
-        padding: 15px 25px;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 600;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-        transition: all 0.3s ease;
-        z-index: 1000;
-    `;
-
-    downloadBtn.onmouseover = () => {
-        downloadBtn.style.transform = 'translateY(-3px)';
-        downloadBtn.style.boxShadow = '0 8px 20px rgba(0, 212, 255, 0.6)';
-        downloadBtn.style.border = '1px solid #00d4ff';
-    };
-
-    downloadBtn.onmouseout = () => {
-        downloadBtn.style.transform = 'translateY(0)';
-        downloadBtn.style.boxShadow = '0 5px 15px rgba(0, 212, 255, 0.4)';
-        downloadBtn.style.border = 'none';
-    };
-
-    downloadBtn.onclick = () => {
-        // Link to the existing PDF
-        const pdfFiles = [
-            'Christopher Britten Resume  PUBLIC.pdf',
-            'Christopher Britten Resume .pdf'
-        ];
-
-        // Try to open the first available PDF
-        window.open(pdfFiles[0], '_blank');
-    };
-
-    document.body.appendChild(downloadBtn);
-}
 
 // Skill items click effect with visual feedback
 function addSkillInteractivity() {
@@ -297,11 +239,7 @@ function updateScrollProgress() {
 
 // Initialize all features
 document.addEventListener('DOMContentLoaded', () => {
-    createPrintButton();
-    createDownloadButton();
-    updateScrollProgress();
-    addSkillInteractivity();
-    addTechSkillInteractivity();
+    createActionButton();
 
     // Add fade-in to header
     const header = document.querySelector('.header');
