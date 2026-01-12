@@ -42,7 +42,7 @@ const Experience = () => {
       title: "Web Developer (Contract)",
       company: "Breton SmarTek - FireQ Emergency Management Software",
       location: "Nova Scotia",
-      period: "2025 - Present",
+      period: "Dec 2025 - Present",
       description: [
         "Developed and maintained production WordPress sites for emergency management and healthcare software products while working independently in a fully remote environment using Trello for task tracking and deliverable coordination",
         "Built custom interactive components including carousels, modal popups, responsive grid systems, and subscription pricing cards using HTML, CSS, and JavaScript within WordPress and Elementor to extend beyond default theme capabilities and meet specific product requirements",

@@ -30,6 +30,14 @@ const Contact = () => {
     message: '',
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [toast, setToast] = useState({ show: false, message: '', type: '' })
+
+  const showToast = (message, type) => {
+    setToast({ show: true, message, type })
+    setTimeout(() => {
+      setToast({ show: false, message: '', type: '' })
+    }, 5000)
+  }
 
   const handleChange = (e) => {
     setFormData({
@@ -57,11 +65,11 @@ const Contact = () => {
 
       await emailjs.send(serviceId, templateId, templateParams, publicKey)
 
-      alert('Thank you for your message! I will get back to you soon.')
+      showToast('Thank you for your message! I will get back to you soon.', 'success')
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
       console.error('EmailJS Error:', error)
-      alert('Oops! Something went wrong. Please try again or email me directly at britten63@hotmail.com')
+      showToast('Oops! Something went wrong. Please try emailing me directly at britten63@hotmail.com', 'error')
     } finally {
       setIsSubmitting(false)
     }
@@ -94,6 +102,13 @@ const Contact = () => {
         <h2 className="section-title">
           Get In <span>Touch</span>
         </h2>
+
+        {toast.show && (
+          <div className={`toast toast--${toast.type}`}>
+            <i className={`fas ${toast.type === 'success' ? 'fa-check-circle' : 'fa-exclamation-circle'}`}></i>
+            <span>{toast.message}</span>
+          </div>
+        )}
 
         <div className="contact__content" ref={contentRef}>
           <div className="contact__info">

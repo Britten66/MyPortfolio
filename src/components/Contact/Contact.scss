@@ -200,3 +200,64 @@
     }
   }
 }
+
+// Toast notification styles
+.toast {
+  position: fixed;
+  top: 30px;
+  right: 30px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  z-index: 9999;
+  animation: slideInRight 0.4s ease-out;
+  backdrop-filter: blur(10px);
+  max-width: 400px;
+
+  @media (max-width: $mobile) {
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    max-width: none;
+    font-size: 0.9rem;
+    padding: 14px 20px;
+  }
+
+  i {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+
+  span {
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  &--success {
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(22, 163, 74, 0.95));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  &--error {
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(220, 38, 38, 0.95));
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(400px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}

@@ -42,8 +42,8 @@ function createActionButton() {
     const actionBtn = document.createElement('a');
     actionBtn.innerHTML = '📄 Download Resume';
     actionBtn.className = 'action-button';
-    actionBtn.href = 'Christopher_Britten_Resume_2025_V4.pdf';
-    actionBtn.download = 'Christopher_Britten_Resume_2025.pdf';
+    actionBtn.href = 'Christopher_Britten_2026-PUBLIC.pdf';
+    actionBtn.download = 'Christopher_Britten_Resume_2026.pdf';
 
     // Style the button - simple grey bubble
     actionBtn.style.cssText = `
