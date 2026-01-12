@@ -80,10 +80,8 @@ const About = () => {
             </div>
 
             <a
-              href="/resume"
+              href="/resume/index.html"
               className="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
             >
               <i className="fas fa-file-alt"></i>
               View Resume
