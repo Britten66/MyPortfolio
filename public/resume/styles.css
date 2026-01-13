@@ -15,7 +15,7 @@ body {
     position: relative;
 }
 
-/* Back to Portfolio Button */
+/* Back to Portfolio Button - Matches Portfolio Style */
 .back-button {
     position: fixed;
     top: 20px;
@@ -24,23 +24,26 @@ body {
     align-items: center;
     gap: 10px;
     padding: 14px 24px;
-    background: white;
-    color: #2c2c2c;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: rgba(20, 20, 20, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ffffff;
     text-decoration: none;
     border-radius: 12px;
     font-size: 15px;
     font-weight: 600;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 10000;
-    border: 2px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .back-button:hover {
-    background: #f5f5f5;
+    background: rgba(30, 30, 30, 0.95);
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.4);
-    border-color: #4a4a4a;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+    border-color: rgba(255, 255, 255, 0.25);
 }
 
 .back-button:active {
