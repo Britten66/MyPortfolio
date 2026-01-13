@@ -55,7 +55,7 @@ const Projects = () => {
       image: null,
       tags: ['React', 'JavaScript', 'Frontend'],
       liveUrl: 'https://studentappformeetings.netlify.app/',
-      githubUrl: 'https://github.com/Britten66/student-enviroment',
+      githubUrl: 'https://github.com/Britten66/student-environment',
       metrics: [
         { icon: 'fas fa-cogs', label: 'Patterns', value: 'Modern JS' },
         { icon: 'fas fa-atom', label: 'Hooks', value: 'React' },
