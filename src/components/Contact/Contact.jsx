@@ -69,7 +69,7 @@ const Contact = () => {
       setFormData({ name: '', email: '', subject: '', message: '' })
     } catch (error) {
       console.error('EmailJS Error:', error)
-      showToast('Oops! Something went wrong. Please try emailing me directly at britten63@hotmail.com', 'error')
+      showToast('Oops! Something went wrong. Please try emailing me directly at chris@chrisbritten.ca', 'error')
     } finally {
       setIsSubmitting(false)
     }
@@ -79,8 +79,8 @@ const Contact = () => {
     {
       icon: 'fas fa-envelope',
       label: 'Email',
-      value: 'britten63@hotmail.com',
-      href: 'mailto:britten63@hotmail.com',
+      value: 'chris@chrisbritten.ca',
+      href: 'mailto:chris@chrisbritten.ca',
     },
     {
       icon: 'fas fa-map-marker-alt',
