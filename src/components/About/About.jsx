@@ -23,10 +23,10 @@ const About = () => {
     return () => observer.disconnect();
   }, []);
   const stats = [
-    { number: "3+", label: "Years Experience" },
-    { number: "25+", label: "Hands-on Projects" },
-    { number: "10+", label: "Clients Worked With" },
-    { number: "10+", label: "Core Technologies" },
+    { number: "2.5+", label: "Years Experience" },
+    { number: "10+", label: "GitHub Projects" },
+    { number: "3", label: "Professional Roles" },
+    { number: "12+", label: "Core Technologies" },
   ];
 
   return (

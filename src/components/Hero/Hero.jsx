@@ -42,7 +42,7 @@ const Hero = () => {
             Christopher <span>Britten</span>
           </h1>
           <h2 className="hero__title animate-fadeInUp delay-2">
-            <span className="typing-text">Full Stack Developer</span>
+            <span className="typing-text">Full Stack Software Developer</span>
           </h2>
           <p className="hero__location animate-fadeInUp delay-2-5">
             <i className="fas fa-map-marker-alt"></i> Nova Scotia, Canada

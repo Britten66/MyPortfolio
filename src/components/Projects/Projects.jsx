@@ -25,7 +25,7 @@ const Projects = () => {
   const projects = [
     {
       title: 'S2 Sprint Final',
-      description: 'Final semester project demonstrating full-stack development skills and best practices.',
+      description: 'Full-stack capstone project built with React and Node.js. Implemented user authentication, RESTful API endpoints, PostgreSQL database design, and responsive UI with real-time data updates.',
       image: null,
       tags: ['JavaScript', 'React', 'Full-Stack'],
       liveUrl: 'https://s2-final.netlify.app/',
@@ -38,7 +38,7 @@ const Projects = () => {
     },
     {
       title: 'Countries API Explorer',
-      description: 'A React application that fetches data from the REST Countries API and displays neighboring countries filtered by first-letter criteria.',
+      description: 'React application integrating REST Countries API with custom filtering logic. Built dynamic search by first-letter criteria, implemented error handling for API failures, and optimized performance with debounced requests.',
       image: null,
       tags: ['React', 'JavaScript', 'REST API'],
       liveUrl: 'https://6930fae25f81be0008bcc412--s2-qap3.netlify.app/',
@@ -51,7 +51,7 @@ const Projects = () => {
     },
     {
       title: 'Student Environment',
-      description: 'A basic app to practice React and implement JavaScript ideologies, focusing on modern development patterns.',
+      description: 'React learning project focusing on component lifecycle, state management with useState/useEffect hooks, and conditional rendering patterns. Built CRUD operations and form validation.',
       image: null,
       tags: ['React', 'JavaScript', 'Frontend'],
       liveUrl: 'https://studentappformeetings.netlify.app/',
@@ -64,7 +64,7 @@ const Projects = () => {
     },
     {
       title: 'HAB Taxi Service',
-      description: 'A Python program for managing taxi service operations, developed as a comprehensive final sprint project.',
+      description: 'Python CLI application for taxi fleet management using OOP principles. Implemented driver scheduling, fare calculation with validation, and persistent file storage for business data.',
       image: null,
       tags: ['Python', 'CLI', 'Backend'],
       liveUrl: null,
@@ -74,20 +74,6 @@ const Projects = () => {
         { icon: 'fas fa-file-code', label: 'Storage', value: 'File-based' },
         { icon: 'fas fa-cube', label: 'Paradigm', value: 'OOP' },
       ],
-    // },
-    // {
-    //   title: '100 Days of Code',
-    //   description: '100 days of coding every day for at least 1 hour, focusing on frontend development with real-world projects.',
-    //   image: null,
-    //   tags: ['JavaScript', 'HTML', 'CSS'],
-    //   liveUrl: 'https://britten66.github.io/100-Days-Coding/',
-    //   githubUrl: 'https://github.com/Britten66/100-Days-Coding',
-    //   metrics: [
-    //     { icon: 'fas fa-calendar-check', label: 'Duration', value: '100 Days' },
-    //     { icon: 'fas fa-folder-open', label: 'Output', value: '100+ Projects' },
-    //     { icon: 'fas fa-palette', label: 'Focus', value: 'Frontend' },
-    //   ],
-    // },
     },
   ]
 
