@@ -80,7 +80,7 @@ const Hero = () => {
                 <i className="fas fa-briefcase"></i>
               </div>
               <div className="stat-content">
-                <span className="stat-value">+3 Years</span>
+                <span className="stat-value">2.5+ Years</span>
                 <span className="stat-label">Experience</span>
               </div>
             </a>
@@ -90,7 +90,7 @@ const Hero = () => {
                 <i className="fas fa-code"></i>
               </div>
               <div className="stat-content">
-                <span className="stat-value">25+</span>
+                <span className="stat-value">10+</span>
                 <span className="stat-label">Projects</span>
               </div>
             </a>
