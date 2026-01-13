@@ -18,20 +18,173 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://christopherbritten.com/" />
+    <meta property="og:url" content="https://chrisbritten.ca/" />
     <meta property="og:title" content="Christopher Britten | Full Stack Developer" />
     <meta property="og:description" content="Full Stack Developer specializing in React, Node.js, and modern web technologies. Building scalable, accessible, and dynamic web applications." />
-    <meta property="og:image" content="/assets/images/imageofme.jpg" />
+    <meta property="og:image" content="https://chrisbritten.ca/assets/images/imageofme.jpg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://christopherbritten.com/" />
+    <meta property="twitter:url" content="https://chrisbritten.ca/" />
     <meta property="twitter:title" content="Christopher Britten | Full Stack Developer" />
     <meta property="twitter:description" content="Full Stack Developer specializing in React, Node.js, and modern web technologies. Building scalable, accessible, and dynamic web applications." />
-    <meta property="twitter:image" content="/assets/images/imageofme.jpg" />
+    <meta property="twitter:image" content="https://chrisbritten.ca/assets/images/imageofme.jpg" />
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <!-- Pre-rendered content for SEO - will be hydrated by React -->
+      <div class="app">
+        <main>
+          <section id="home" class="hero">
+            <div class="hero__container">
+              <div class="hero__content">
+                <p class="hero__greeting">Hello, I'm</p>
+                <h1 class="hero__name">Christopher <span>Britten</span></h1>
+                <h2 class="hero__title"><span>Full Stack Developer</span></h2>
+                <p class="hero__location">Nova Scotia, Canada</p>
+                <p class="hero__description">
+                  I build scalable products that are fast, accessible, and dynamic.
+                  Passionate about turning complex problems into simple, effective solutions.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section id="about" class="about">
+            <div class="container">
+              <h2 class="section-title">About Me</h2>
+              <div class="about__content">
+                <div class="about__text">
+                  <h3>Full stack developer based in Nova Scotia</h3>
+                  <p>
+                    with experience across development and testing workflows. I focus on building
+                    maintainable, performant applications by emphasizing code quality, testing,
+                    and practical implementation from the start.
+                  </p>
+                  <p>
+                    I've contributed to client facing work and full stack deployments, working
+                    across front end, back end, and testing layers. I also organize Coding & Coffee,
+                    a weekly collaborative session where developers review code, discuss their code,
+                    and work through real world problems together.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" class="projects">
+            <div class="container">
+              <h2 class="section-title">My Projects</h2>
+              <div class="projects__grid">
+                <article class="project-card">
+                  <h3>S2 Sprint Final</h3>
+                  <p>Final semester project demonstrating full-stack development skills and best practices.</p>
+                  <div class="project-card__tags">
+                    <span>JavaScript</span>
+                    <span>React</span>
+                    <span>Full-Stack</span>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <h3>Countries API Explorer</h3>
+                  <p>A React application that fetches data from the REST Countries API and displays neighboring countries filtered by first-letter criteria.</p>
+                  <div class="project-card__tags">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>REST API</span>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <h3>Student Environment</h3>
+                  <p>A basic app to practice React and implement JavaScript ideologies, focusing on modern development patterns.</p>
+                  <div class="project-card__tags">
+                    <span>React</span>
+                    <span>JavaScript</span>
+                    <span>Frontend</span>
+                  </div>
+                </article>
+                <article class="project-card">
+                  <h3>HAB Taxi Service</h3>
+                  <p>A Python program for managing taxi service operations, developed as a comprehensive final sprint project.</p>
+                  <div class="project-card__tags">
+                    <span>Python</span>
+                    <span>CLI</span>
+                    <span>Backend</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </section>
+
+          <section id="contact" class="contact">
+            <div class="container">
+              <h2 class="section-title">Get In Touch</h2>
+              <p>Feel free to reach out for collaborations or just a friendly hello</p>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Christopher Britten",
+      "url": "https://chrisbritten.ca",
+      "image": "https://chrisbritten.ca/assets/images/imageofme.jpg",
+      "jobTitle": "Full Stack Developer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelance"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "Nova Scotia",
+        "addressCountry": "CA"
+      },
+      "alumniOf": {
+        "@type": "Organization",
+        "name": "Keyin College"
+      },
+      "knowsAbout": [
+        "JavaScript",
+        "React",
+        "Node.js",
+        "Full Stack Development",
+        "Web Development",
+        "Python",
+        "REST API",
+        "Frontend Development",
+        "Backend Development",
+        "Software Testing"
+      ],
+      "sameAs": [
+        "https://github.com/Britten66",
+        "https://www.linkedin.com/in/christopher-britten/"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfilePage",
+      "dateCreated": "2024-01-01T00:00:00-04:00",
+      "dateModified": "2026-01-12T00:00:00-04:00",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Christopher Britten",
+        "description": "Full Stack Developer specializing in React, Node.js, and modern web technologies. Based in Nova Scotia, Canada.",
+        "image": "https://chrisbritten.ca/assets/images/imageofme.jpg",
+        "sameAs": [
+          "https://github.com/Britten66",
+          "https://www.linkedin.com/in/christopher-britten/"
+        ]
+      }
+    }
+    </script>
   </body>
 </html>

@@ -2,5 +2,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap (update this URL when you deploy to your actual domain)
-# Sitemap: https://christopherbritten.com/sitemap.xml
+Sitemap: https://chrisbritten.ca/sitemap.xml
