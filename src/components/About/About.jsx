@@ -58,11 +58,11 @@ const About = () => {
               start.
             </p>
             <p>
-              I've contributed to client facing work and full stack deployments,
-              working across front end, back end, and testing layers. I also
+              I've contributed to client-facing work and full-stack deployments,
+              working across front-end, back-end, and testing layers. I also
               organize Coding & Coffee, a weekly collaborative session where
-              developers review code, discuss their code, and work through real
-              world problems together.
+              developers review code, discuss their code, and work through real-world
+              problems together.
             </p>
             <p>
               Outside of development, I enjoy experimenting with new
