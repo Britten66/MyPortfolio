@@ -378,8 +378,8 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        top: 5%;
-        right: -12%;
+        top: -5%;
+        right: 5%;
       }
     }
 
@@ -391,8 +391,8 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        top: 40%;
-        right: -12%;
+        top: 50%;
+        right: -20%;
       }
     }
 
@@ -404,8 +404,8 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        bottom: 8%;
-        right: -12%;
+        bottom: -5%;
+        right: 5%;
       }
     }
 
