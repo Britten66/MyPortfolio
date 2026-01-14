@@ -372,17 +372,12 @@
 
     &--1 {
       top: 8%;
-      right: -30%;
+      right: -35%;
       animation-delay: 0s;
       cursor: pointer;
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        top: -15%;
-        right: -5%;
-      }
-
-      @media (max-width: $mobile) {
         display: none;
       }
     }
@@ -395,11 +390,6 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        top: 50%;
-        right: -35%;
-      }
-
-      @media (max-width: $mobile) {
         display: none;
       }
     }
@@ -412,11 +402,6 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        bottom: -15%;
-        right: -5%;
-      }
-
-      @media (max-width: $mobile) {
         display: none;
       }
     }
