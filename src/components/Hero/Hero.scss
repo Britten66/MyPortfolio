@@ -378,8 +378,12 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        top: -5%;
-        right: 5%;
+        top: -15%;
+        right: -5%;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
       }
     }
 
@@ -392,7 +396,11 @@
 
       @media (max-width: $tablet) {
         top: 50%;
-        right: -20%;
+        right: -35%;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
       }
     }
 
@@ -404,8 +412,12 @@
       transition: transform 0.2s ease-out !important;
 
       @media (max-width: $tablet) {
-        bottom: -5%;
-        right: 5%;
+        bottom: -15%;
+        right: -5%;
+      }
+
+      @media (max-width: $mobile) {
+        display: none;
       }
     }
 
