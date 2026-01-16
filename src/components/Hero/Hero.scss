@@ -409,6 +409,7 @@
     &--4 {
       bottom: -30%;
       left: 50%;
+      transform: translateX(-130px);
       animation: floatStatLeft 4s ease-in-out infinite;
       padding: 15px;
       background: rgba(255, 255, 255, 0.05);
@@ -447,6 +448,7 @@
     &--5 {
       bottom: -30%;
       left: 50%;
+      transform: translateX(50px);
       animation: floatStatRight 4s ease-in-out infinite;
       animation-delay: 1s;
       padding: 15px;

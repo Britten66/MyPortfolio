@@ -46,10 +46,10 @@
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0);
+    transform: translate(-50%, -50%) translateY(0);
   }
   50% {
-    transform: translateY(-20px);
+    transform: translate(-50%, -50%) translateY(-20px);
   }
 }
 
@@ -128,4 +128,9 @@
   .delay-#{$i} {
     animation-delay: #{$i * 0.1}s;
   }
+}
+
+// Custom delay for finer control
+.delay-2-5 {
+  animation-delay: 0.25s;
 }
